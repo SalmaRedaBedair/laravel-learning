@@ -17,11 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return 'Hello';
 });
-Route::get('create-greeting',function(){
-    $greeting=new Greeting;
-    $greeting->body='Hello world';
+Route::get('create-greeting', function () {
+    $greeting = new Greeting;
+    $greeting->body = 'Hello world';
     $greeting->save();
 });
-Route::get('first-greeting',function(){
+Route::get('first-greeting', function () {
     return Greeting::first()->body;
 });
+
+Route::get('posts/{id}/{slug}', function ($id, $slug) {
+    //
+})->where(['id' => '[0-9]+', 'slug' => '[A-Za-z]+']);
