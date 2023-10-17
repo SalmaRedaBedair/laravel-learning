@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Validator;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +17,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::post('form', function (Illuminate\Http\Request $request) {
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|string',
+        'email' => 'required|email',
+    ]);
+
+    if ($validator->fails()) {
+        return back()->withErrors($validator)
+            ->withInput();
+    }
+});
+Route::post('something-you-cant-do', function (Illuminate\Http\Request $request) {
+    abort(403, 'You cannot do that!');
+    abort_unless($request->has('magicToken'), 403);
+    abort_if($request->user()->isBanned, 403);
 });
 

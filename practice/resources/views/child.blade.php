@@ -12,8 +12,31 @@
     <p>Here's why you should sign up for our app: <strong>It's Great.</strong></p>
     @include('test', ['text' => 'See just how great it is'])
 </div> --}}
-
+{{--
 @extends('test')
 @push('styles')
     <!-- push something to the bottom of the stack -->
+    <style>
+        p{
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
 @endpush
+
+@prepend('styles')
+    <!-- push something to the top of the stack -->
+    <style>
+        p{
+            color: green;
+        }
+    </style>
+@endprepend --}}
+
+<!-- in another template -->
+{{-- @extends('test')
+
+@modal
+    Modal content here
+@endmodal --}}
+{{ $mmss }}

@@ -315,3 +315,108 @@ class SayHello extends Controller
 // routes/web.php
 Route::get('sayHello',SayHello::class);
 ```
+
+# Eloquent ORM vs query builder
+- Eloquent (ORM): use to can make sql quiries without the need to write alot of quiries
+- query builder is faster and take less memory
+- if i work with many tables use query builder not orm
+- during testing use orm
+
+# implicit route building 
+- laravel see that if i pass id in place of post then i want to look up for post with that id so it et it and retrun it for me
+```php
+Route::get('posts/{post}', function (Post $post) {
+    return $post;
+});
+```
+
+# customizing route key for eloquent model
+- to change the column your eloquent model uses for look up we add method called getRouteKeyName to that model
+```php
+public function getRouteKeyName()
+{
+    return 'title';
+}
+```
+- now it wll search with the column called title
+
+# Route cache
+- to cache your routes files run 
+```
+php artisan route:cache
+```
+- to clear cache
+```
+php artisan route:clear
+```
+- laravel will now match only route aganist that cached routes
+- every change you make to route you should run command route:cache again
+- git ignore route cache file so you should add it to server and do the same as i mentioned above
+
+# form method spoofing
+- we use it when we want to use http method rather than `post`
+```php
+@method('delete')
+```
+# Redirect
+```php
+Route::get('redirect-with-helper', function () {
+    return redirect()->to('login');
+});
+```
+- for named route
+```php
+Route::get('redirect', function () {
+    return redirect()->route('conferences.index');
+});
+```
+- redirect with 
+```php
+Route::get('redirect-with-key-value', function () {
+    return redirect('dashboard')
+    ->with('error', true);
+});
+```
+## input data
+- it is used when you want to display errors and still preserving data 
+- it is used only with views
+```php
+Route::post('form', function () {
+ return redirect('form')
+ ->withInput()
+ ->with(['error' => true, 'message' => 'Whoops!']);
+});
+```
+- The easiest way to get the flashed input that was passed with withInput() is using the old() helper
+## with errors
+- it is used only with views
+- there is also a useful method for passing errors along with a redirect response: withErrors().
+```php
+Route::post('form', function (Illuminate\Http\Request $request) {
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|string',
+        'email' => 'required|email',
+    ]);
+
+    if ($validator->fails()) {
+        return back()
+            ->withErrors($validator)
+            ->withInput();
+    }
+});
+```
+# Aborting the request
+- 
+
+# testing
+```php
+public function test_post_creates_new_assignment()
+{
+ $this->post('/assignments', [
+ 'title' => 'My great assignment',
+ ]);
+ $this->assertDatabaseHas('assignments', [
+ 'title' => 'My great assignment',
+ ]);
+}
+```

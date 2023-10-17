@@ -3,10 +3,14 @@
 use App\Http\Controllers\InvitationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SayHello;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\InvitationEmail;
+use App\Models\Post;
+
+use function Pest\Laravel\post;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,12 +64,48 @@ Route::middleware(['auth', 'throttle:60,1'])->group(function () {
     });
 });
 
+view()->share('name', 'loma');
+
+Route::get('sayHello', SayHello::class);
+
+Route::get('posts/{id}', function ($id) {
+    $post = Post::findOrFail($id);
+    return $post;
+});
+
+Route::get('posts2/{post}', function (Post $post) {
+    return $post;
+});
+Route::get('titles/{title}', function (Post $title) {
+    return $title;
+});
+Route::get('redirect-with-helper', function () {
+    return redirect()->to('register');
+});
+
+Route::post('something-you-cant-do', function (Illuminate\Http\Request $request) {
+    return 'no';
+    abort(403, 'You cannot do that!');
+    abort_unless($request->has('magicToken'), 403);
+    abort_if($request->user()->isBanned, 403);
+});
+Route::get('test', function () {
+    return view('test');
+});
+Route::get('child', function () {
+    return view('child');
+});
+
+Route::get('backend/sales/{analytics}', function ($analytics) {
+    return view('backend.sales-graphs')
+        ->with('analytics', $analytics);
+});
+
+
+
 Route::fallback(function () {
     return 'That route is not found.';
 });
-view()->share('name','loma');
-
-Route::get('sayHello',SayHello::class);
 
 
 require __DIR__ . '/auth.php';
