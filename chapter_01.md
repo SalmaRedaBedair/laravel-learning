@@ -1,9 +1,13 @@
 # laravel
+## why framework
+- the one who made it is made a dicisson about not only individual components but also how those individual components will fit together
 ## other php frameworks
 - Symfony
+- cakephp
 - CodeIgniter
 ## what is the relation between laravel & Ruby on Rails
 - laravel was inspired by the principles and concepts of Ruby on Rails
+- ruby on rails is a framework written with ruby
 ## who made laravel is Taylor
 ## what was done in every version of laravle
 1. laravel 1:

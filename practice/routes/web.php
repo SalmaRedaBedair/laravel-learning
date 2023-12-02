@@ -23,6 +23,13 @@ use function Pest\Laravel\post;
 |
 */
 
+Route::domain('api.myapp.com')->group(function () {
+    Route::get('/loma', function () {
+    return view('loma');
+    });
+    });
+
+
 Route::get('/', function () {
     return view('welcome');
 });

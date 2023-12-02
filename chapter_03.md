@@ -31,6 +31,13 @@
 - delete: delete resources
 - options: ask server which verbs are allowed for that url
 
+# what is api?
+- api connect between two devices, transfer requests & responses like waiter in restaurent
+
+# what is REST?
+- make be define the type of request i will make (get, post, put, delete, patch)
+
+
 # closure
 - anonymous function
 -  A closure is a function that:
@@ -97,8 +104,36 @@ Route::get('posts/{id}/{slug}', function ($id, $slug) {
  //
 })->where(['id' => '[0-9]+', 'slug' => '[A-Za-z]+']);
 
-// note that {id} & $id and {slug} & $slug are not important to be the same, but it is preferred, it works from left to write
+// note that {id} & $id and {slug} & $slug are not important to be the same, but it is preferred, it works from left to right
 ```
+## constraint helpers
+```php
+Route::get('users/{id}/friends/{friendname}', function ($id,
+$friendname) {
+//
+})->whereNumber('id')->whereAlpha('friendname');
+
+Route::get('users/{name}', function ($name) {
+//
+})->whereAlphaNumeric('name');
+// whereAlphaNumeric => allow both letters and numbers
+
+Route::get('users/{id}', function ($id) {
+//
+})->whereUuid('id');
+// whereUuid => Universally Unique Identifier
+
+Route::get('users/{id}', function ($id) {
+//
+})->whereUlid('id');
+// whereUlid => Universally Unique Lexicographically Sortable Identifier
+
+Route::get('friends/types/{type}', function ($type) {
+//
+})->whereIn('type', ['acquaintance', 'bestie', 'frenemy']);
+
+```
+
 # ROUTE name
 - it is better because it is easier
 - if you change the route you will not change url in front end code
