@@ -174,3 +174,7 @@ Route::fallback(function () {
 ```
 # Routes 
 - while making it return to ch3 in book and try to write better code
+
+# view()->share('variableName', 'variableValue');
+- share variable over all view pages
+

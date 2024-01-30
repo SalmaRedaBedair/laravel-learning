@@ -368,12 +368,35 @@ Route::get('posts/{post}', function (Post $post) {
 # customizing route key for eloquent model
 - to change the column your eloquent model uses for look up we add method called getRouteKeyName to that model
 ```php
+// in model
 public function getRouteKeyName()
 {
     return 'title';
 }
+// in web
+Route::get('search/{post}',function(Post $post){
+    return $post;
+});
+```
+- it is equal to that 
+```php
+// in route only no thing in model
+Route::get('search/{post:title}',function(Post $post){
+    return $post;
+});
 ```
 - now it wll search with the column called title
+
+## if there is relation between columns
+
+```php
+Route::get(
+'organizers/{organizer}/conferences/{conference:slug}',
+function (Organizer $organizer, Conference $conference) {
+return $conference;
+});
+```
+- it will find organizer that match and then search for conferance that have relation with prganizer and match
 
 # Route cache
 - to cache your routes files run 
@@ -394,6 +417,28 @@ php artisan route:clear
 @method('delete')
 ```
 # Redirect
+## redirect shortcut
+```php
+Route::get('redirect-by-route', function () {
+return redirect('login');
+});
+ // is equial to 
+Route::redirect('redirect-by-route', 'login');
+```
+## diffrence between redirect()->to() & redirect->route()
+- to: write bath inside it
+- name: write route name inside it
+
+```php
+Route::get('redirect', function () {
+return redirect()->to('home'); // path
+});
+
+Route::get('redirect', function () {
+return redirect()->route('conferences.index'); // route name
+});
+```
+
 ```php
 Route::get('redirect-with-helper', function () {
     return redirect()->to('login');
@@ -405,7 +450,8 @@ Route::get('redirect', function () {
     return redirect()->route('conferences.index');
 });
 ```
-- redirect with 
+## redirect with 
+- save data in session, `just for next page`
 ```php
 Route::get('redirect-with-key-value', function () {
     return redirect('dashboard')
@@ -444,14 +490,6 @@ Route::post('form', function (Illuminate\Http\Request $request) {
 - 
 
 # testing
-```php
-public function test_post_creates_new_assignment()
-{
- $this->post('/assignments', [
- 'title' => 'My great assignment',
- ]);
- $this->assertDatabaseHas('assignments', [
- 'title' => 'My great assignment',
- ]);
-}
-```
+
+- unit: test part part => update, create, insert, delete 
+- feature: test 7aga kakol => auth, auth with data, auth without data

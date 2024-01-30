@@ -13,4 +13,5 @@ class InvitationController extends Controller
         }
         return 'Thank you for confirming!';
     }
+    
 }
