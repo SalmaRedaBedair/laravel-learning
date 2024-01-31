@@ -13,7 +13,7 @@
         <p style="color: green;">{{ session('message') }}</p>
     @endif
 
-    <form method="post" action="{{ route('form') }}">
+    <form method="post" action="{{ route('sent', ['name'=>1]) }}">
         @csrf
 
         <label for="name">Name:</label>

@@ -6,6 +6,7 @@ use App\Http\Controllers\InvitationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SayHello;
+use App\Http\Controllers\testController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Loma;
 use App\Http\Middleware\Sandy;
@@ -206,10 +207,16 @@ Route::get('salma',[HomeController::class,'index']);
 
 Route::middleware(Loma::class)->get('testo',[HomeController::class,'index']);
 
-Route::get('form', function(){
-    return view('form');
-})->name('form');
+// Route::get('form', function(){
+//     return view('form');
+// })->name('form');
 
 Route::middleware(['auth','verified'])->get('dashboard', function(){
     return view('dashboard');
 })->name('dashboard');
+
+
+Route::post('sent/{name}', [testController::class,'sent'])->name('sent');
+Route::get('/form',function(){
+    return view('form');
+});

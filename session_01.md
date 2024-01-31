@@ -47,3 +47,37 @@ Route::prefix('dashboard')->name('dashboard.')->group(function(){
 ```php
 <a href="{{ route('dashboard.loma') }}">saloma</a>
 ```
+
+# namespace
+![](./images/session1.jpg)
+
+
+# route group
+```php
+Route::group([
+    'middleware' => ['auth','auth.type:super-admin,admin'],
+    'as' => 'dashboard.',
+    'prefix' => 'admin/dashboard',
+], function () {
+    Route::get('/', [DashboardController::class, 'index'])
+        ->name('dashboard');
+});
+
+Route::middleware('auth','auth.type:super-admin,admin')
+->name('dashboard.')
+->prefix('admin/dashboard')
+->group(function({
+    Route::get('/', [DashboardController::class, 'index'])
+        ->name('dashboard');
+}));
+```
+- these two definitions are equal
+- these two group() methods are different
+- Route::group 
+ - that Route facade is for object from router class
+ - that group will call function group in router class
+- ->group() 
+ - call function group in RouterRegister class
+ - that router register call group() in router class and send to it array of attributes and callback function that contain routes 
+ - that array of attributes was filled by previous methods in chaining like(name(), prefix(), middleware())
+- both of them at the end use group() method in router class 
