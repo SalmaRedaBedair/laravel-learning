@@ -81,3 +81,33 @@ Route::middleware('auth','auth.type:super-admin,admin')
  - that router register call group() in router class and send to it array of attributes and callback function that contain routes 
  - that array of attributes was filled by previous methods in chaining like(name(), prefix(), middleware())
 - both of them at the end use group() method in router class 
+
+
+
+# csrf
+- there is two way to handle csrf error
+  - the first one, is to add _token to each form submition
+```php
+<form action="/tasks/5" method="POST">
+@csrf
+</form>
+```
+  - the second: in js applications 
+    - store token i each page in meta tag, which will be send in http header to the server
+```php
+<meta name="csrf-token" content="<?php echo csrf_token(); ?>">
+```
+    - i can store it globally only once
+```php
+// In jQuery:
+$.ajaxSetup({
+headers: {
+'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+}
+});
+```
+- laravel check X-CSRF-TOKEN or X-XSRF-TOKEN if match the token in server or not
+## X-CSRF-TOKEN
+- laravel
+## X-XSRF-TOKEN
+- js

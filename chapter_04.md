@@ -1,31 +1,58 @@
 # Blade
-- inspired by `.NET’s Razor engine`
-- all blade syntax is compiled into normal php code 
-- blade is fast
-- it allows you to write native php code in your blade files
+- all blade syntax is compiled into normal php code then cached so it is fast
 
+## now important question...
+### he said here code will cashed how it is cashed even if i can update blade and see the result directly without clear cache?
 
-# Twig
-- we can use twig with laravel instead of blade but we should install it's package
-- it is used by all laravel frameworks for generating HTML and XML
+Laravel also provides features for development environments that make it convenient to see changes in Blade templates without manually clearing the cache:
+
+**Automatic Compilation**: In development mode, Laravel will automatically recompile Blade templates if changes are detected in the original .blade.php files. This means that when you make changes to a Blade template during development, Laravel will detect those changes and recompile the template without you needing to manually clear the cache.
+
+**Cache Clearing**: In some cases, if you encounter issues with stale cache or if changes are not reflected as expected, you might need to manually clear the cache using artisan commands like `php artisan view:clear` or `php artisan cache:clear`. This command clears the compiled views cache, forcing Laravel to recompile the Blade templates on the next request.
+
+So, while Blade templates are cached for performance, Laravel provides mechanisms to ensure that changes made during development are reflected in the rendered output without needing to manually clear the cache every time.
+
+# not to use php in blade
+- if you have to use php in blade that mean you use code must not be used in that file
+- so you must go and write that code in the model or the controller
 
 ## Echoing data
 - data is safe
 ```php
 {{ $variable }}  == <?= htmlentities($variable) ?>
 ```
+- to echo data without htmlentities
+```php
+ {!! and !!}
+```
+
+# notice the diffrence between two codes
+```php
+// Parsed as Blade; the value of $bladeVariable is echoed to the view
+{{ $bladeVariable }}
+// output: value of $bladeVariable
+
+// @ is removed and "{{ handlebarsVariable }}" echoed to the view directly
+@{{ handlebarsVariable }}
+// output: {{ handlebarsVariable }}
+
+
+```
+
+# verbatim
+- `@verbatim` is a helpful directive for ensuring that specific parts of your template are treated as raw text without any Blade processing
+```php
+@verbatim
+    <div class="container">
+        Hello, {{ name }}.
+    </div>
+@endverbatim
+```
 
 # forelse
-- if array is empty it let me handle that condition 
+- @forelse is a @foreach that also allows you to program in a fallback if the
+object you’re iterating over is empty.
 ```php
-<?php
-$talks = [
-    (object)['title' => 'Talk 1', 'length' => 30],
-    (object)['title' => 'Talk 2', 'length' => 45],
-    (object)['title' => 'Talk 3', 'length' => 20],
-];
-?>
-
 @forelse ($talks as $talk)
     {{ $talk->title }} ({{ $talk->length }} minutes)<br>
 @empty
@@ -37,6 +64,19 @@ $talks = [
 ```php
 @yield('title','Home page')
 ```
+
+# foreach & forelse in blade system
+- they add new feature not exists in php foreach loops: `$loop variable`
+- that variable will return std class object, with those properties
+    - index: 0-indexed
+    - iteration: 1-indexed
+    - remaining: number of element remain in loop
+    - count: number of elemnt in loop
+    - first & last: boolen indicate first or last
+    - even & odd: boolen indicate whether that iteration is odd or even 
+    - depth: How many “levels” deep this loop is: 1 for a loop, 2 for a loop
+within a loop, etc.
+    - parent: refrence to the parent of that loop, if that loop is in another loop, if not return null
 
 # diffrence between show and endsection 
 - show: define place of content in parent

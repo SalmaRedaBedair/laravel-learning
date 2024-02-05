@@ -220,3 +220,17 @@ Route::post('sent/{name}', [testController::class,'sent'])->name('sent');
 Route::get('/form',function(){
     return view('form');
 });
+
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('hello', function () {
+        return 'Hello';
+    });
+
+
+    Route::get('world', function () {
+        return 'World';
+    });
+
+});
