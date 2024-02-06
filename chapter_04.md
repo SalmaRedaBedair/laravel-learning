@@ -78,24 +78,55 @@ object you’re iterating over is empty.
 within a loop, etc.
     - parent: refrence to the parent of that loop, if that loop is in another loop, if not return null
 
-# diffrence between show and endsection 
-- show: define place of content in parent
-- endsection: end of content in child
-- section will be shown in child even if you don't override it
+# Template Inheritance
+## @section...@show
+```php
+@section('footerScripts')
+<script src="app.js"></script>
+@show
+```
+1. `@show`: used to show that content in parent, if i don't use section use it as default in children classes
+2. if child have content in section it will overwrite that current content
+3. to make that content appear i must use `@parent` inside the section
+
+### diffrence between show and endsection 
+- `@show`: used to show that content in parent, if i don't use section use it as default in children classes
+
+## @yeild & @section
+- we use @yeild in parent to place a place for section
+- @section...@endsection: used in children to put some content in the place of @yeild
+
 ```php
 // parent
-@section('footerScripts')
-    <p>loma</p>
-    <script src="app.js"></script>
-@show
+<html>
+<head>
+    <title>My Site | @yield('title', 'Home Page')</title>
+</head>
+<body>
+    <div class="container">
+        @yield('content')
+    </div>
+    @section('footerScripts')
+        <script src="app.js"></script>
+    @show
+</body>
+</html>
+```
 
-// child 
+```php
+// child
+@extends('parent')
+@section('title','child page')
+@section('content')
+    <p>loma</p>
+@endsection
+
 @section('footerScripts')
     @parent
-    <script src="dashboard.js"></script>
+    <script src="loma.js"></script>
 @endsection
 ```
-- @stop: used to not show content in either parent nor child
+- @stop: it is only alias for @endsection
 - @parent: it is used to incluede content in the parent to the child
 
 # includeIf, includeWhen and includeFirst
@@ -108,6 +139,139 @@ within a loop, etc.
 
 {{-- Include the first view that exists from a given array of views --}}
 @includeFirst(['customs.header', 'header'], ['some' => 'data'])
+```
+## @each
+- loop over array $modules will call file('partials.module') if array impy call file partials.empty-module
+```php
+<!-- resources/views/sidebar.blade.php -->
+<div class="sidebar">
+    @each('partials.module', $modules, 'module', 'partials.empty-module')
+</div>
+
+<!-- resources/views/partials/module.blade.php -->
+<div class="sidebar-module">
+    <h1>{{ $module->title }}</h1>
+</div>
+
+<!-- resources/views/partials/empty-module.blade.php -->
+<div class="sidebar-module">
+    No modules :(
+</div>
+```
+
+# components
+- it is much easier to pass larage sections of template code into them
+![](./images/component.jpg)
+## create component for view only (only template)
+```
+php artisan make:component modal --view
+```
+## generate php class
+```php
+php artisan make:component modal 
+```
+
+## passing data to componnents
+there are **4** ways to pass variables to view using component
+1. string attribute
+2. php attribute
+3. default slot
+4. named slot
+
+### Passing data into components via attributes
+1. **template only**
+   ```php
+    <!-- Passing the data in -->
+    <x-modal title="Title here yay" :width="$width" />
+    <!-- Accessing the data in the template -->
+    <div style="width: {{ $width }}">
+    <h1>{{ $title }}</h1>
+    </div>
+    // notice attrbutes('title', 'width')
+   ```
+2. **generate php class**
+    1. define every attribute in component class and set its property to `public`
+    ```php
+    class Modal extends Component
+    {
+    public function __construct(
+    public string $title,
+    public string $width,
+    ) {}
+    }
+    ```
+    2. pass attributes while calling component view
+    ```php
+    public function render(): View|Closure|string
+    {
+        return view('components.nav',['title'=>title]);
+    }
+    ```
+
+#### @props
+- if i use variable $attributes any variable i define inside @props will not appear in $attributes if use it inside component
+- i use it also to set default values
+```php
+@props([
+    'width',
+    'title',
+])
+<div style="width: {{ $width }}">
+    <h1>{{ $title }}</h1>
+</div>
+```
+```php
+// components/modal.balde.php
+@props([
+    'width'=>0,
+    'title'=>0,
+])
+<div style="width: {{ $width }}" $attributes> // that vaiable $attributes= ['class'=>'coco'] because attribute class not defined in @props
+    <h1>{{ $title }}</h1>
+</div>
+
+// to use above
+<x-modal width='0' title="loma" class= 'coco' />
+```
+
+### Passing data into components via slots
+- you may have to use more than one slot, so you should use named slot
+```php
+// to use model
+<x-modal>
+<x-slot:title>
+    <h2 class="uppercase">Password requirements not met</h2>
+</x-slot>
+    <p>The password you have provided is not valid.
+    Here are the rules for valid passwords: [...]</p>
+    <p><a href="#">...</a></p>
+</x-modal>
+```
+```php
+// that is in component/modal.blade.php
+<div>
+    {{ $title }}
+    {{ $slot }}
+<div>
+```
+
+## component method
+- that function i use to not use php code inside plade, so i define function in component class to call it when i use inside component
+```php
+// inside component class
+// define function isPromoted to can use it inside template and not to use php code in template
+public function isPromoted($item)
+{
+    return $item->promoted_at !== null && ! $item->promoted_at->isPast();
+}
+
+<!-- in the template -->
+<div>
+@if ($isPromoted($item))
+<!-- show promoted badge -->
+@endif
+<!-- ... -->
+</div>
 ```
 
 # stack

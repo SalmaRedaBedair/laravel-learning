@@ -1,1 +1,1 @@
-<a href="{{ route('dashboard.loma') }}">saloma</a>
+@yeild('loma')

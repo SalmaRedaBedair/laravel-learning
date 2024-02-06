@@ -1,42 +1,21 @@
-{{-- @extends('test')
-@section('title', 'loma')
-@section('content')
-<p>loma</p>
+{{-- <div class="sidebar-module">
+    <h1>{{ $module->title }}</h1>
+</div>
+
+loma --}}
+
+{{-- <x-modal2>
+    <x-slot:title>
+        <h2 class="uppercase">Password requirements not met</h2>
+    </x-slot>
+    <p>The password you have provided is not valid.
+        Here are the rules for valid passwords: [...]</p>
+    <p><a href="#">...</a></p>
+</x-modal2> --}}
+
+@section('loma')
+    <p>dodo</p>
+    @stop
+    <p>saloma</p>
 @endsection
-@section('footerScripts')
-        <p>coco</p>
-        <script src="app.js"></script>
-@endsection
---}}
-{{-- <div class="content" data-page-name="loma">
-    <p>Here's why you should sign up for our app: <strong>It's Great.</strong></p>
-    @include('test', ['text' => 'See just how great it is'])
-</div> --}}
-{{--
-@extends('test')
-@push('styles')
-    <!-- push something to the bottom of the stack -->
-    <style>
-        p{
-            color: blue;
-            font-weight: bold;
-        }
-    </style>
-@endpush
 
-@prepend('styles')
-    <!-- push something to the top of the stack -->
-    <style>
-        p{
-            color: green;
-        }
-    </style>
-@endprepend --}}
-
-<!-- in another template -->
-{{-- @extends('test')
-
-@modal
-    Modal content here
-@endmodal --}}
-{{ $mmss }}

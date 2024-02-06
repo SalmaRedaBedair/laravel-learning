@@ -234,3 +234,13 @@ Route::middleware('auth')->group(function () {
     });
 
 });
+
+
+Route::get('view',function(){
+    return view('view');
+});
+
+Route::get('child',function(){
+    return view('child');
+});
+
