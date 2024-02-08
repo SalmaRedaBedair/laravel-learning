@@ -368,26 +368,83 @@ public function isPromoted($item)
 @endcomponen
 ```
 
-# composer view & share variables globally
-- we use it to pass data to views instead of calling it in every view 
 
+# View Composers and Service Injection
+- sometimes you find yourself passing the same data over and over to the multiple views
 ```php
-// in services provider
-public function boot()
-{
- view()->share('recentPosts', Post::recent());
-}
-```
-# View-scoped view composers with closures
-- we use it to share variable with views i put as first parameters
-
-```php
-view()->composer('partials.sidebar', function ($view) {
- $view->with('recentPosts', Post::recent());
+Route::get('home', function () {
+    return view('home')
+        ->with('posts', Post::recent());
+});
+Route::get('about', function () {
+    return view('about')
+        ->with('posts', Post::recent());
 });
 ```
+*what is a bad thing :(* 
+- the solution is called **view composer**, it allows you to share the same data over multible views you define
+
+_we can solve that problem with many ways lets discuss each :"_
+
+## 1. Sharing a variable globally (every view will have that variable)
+*globally share variable to all views in application*
+```php
+// in app service provider as usual any thing we want over all app is put in it :"
+public function boot()
+{
+    view()->share('recentPosts', Post::recent());
+}
+```
+
+## 2. View-scoped view composers with closures
+*define some views to pass variables to :"*
+```php
+view()->composer(
+['partials.header', 'partials.footer'],
+function ($view) {
+$view->with('recentPosts', Post::recent());
+}
+);
+```
+## 3. View-scoped view composers with classes
+*same as above but as usual any closure function can be replaced by class :"*
+```php
+namespace App\Http\ViewComposers;
+use App\Post;
+use Illuminate\Contracts\View\View;
+class RecentPostsComposer
+{
+    public function compose(View $view)
+    {
+        $view->with('recentPosts', Post::recent());
+    }
+}
+```
+```php
+public function boot(): void
+{
+    view()->composer(
+        'partials.sidebar',
+        \App\Http\ViewComposers\RecentPostsComposer::class // instead of passing closure function pass calss i created :"
+    );
+}
+```
+
+# Blade service injection
+- i pass object of a class of a serivice to can use its variables and methods in the view page, and not have to pass it to each route
+- i inject that service using directive `@inject`
+
+```php
+@inject('analytics', 'App\Services\Analytics')
+<div class="finances-display">
+    {{ $analytics->getBalance() }} / {{ $analytics->getBudget() }}
+</div>
+```
+
 # Custom Blade Directives
-- you can add your own directive like that ex:
+- there is alot of builtin directives in laravel which you can use it, but you can also make you own directive :"
+- directives are good to reduce redundancy of code, make code more simple
+- *now how to make it :"*
 ```php
 public function boot()
 {
@@ -396,28 +453,91 @@ public function boot()
     });
 }
 ```
-# cache and blade directives
-- it is not a good practice to use directives in providers if it contains variables because of caching, if you have variables they will be cached and it will not updates it's values 
-- ex: if you visit this page, and the user is a guest, Blade will cache the view with the "You are a guest" message. Now, even if the user logs in during another request, the cached view will still show "You are a guest" because the auth()->guest() result is cached. This can lead to incorrect behavior, so it is better to imlpement it in controller
+## you can also pass parameters to directives
 ```php
-public function showWelcomePage() {
-    $user = auth()->user();
-    return view('welcome', ['user' => $user]);
-}
-
-@if($user)
-    Welcome, {{ $user->name }}!
-@else
-    You are a guest.
-@endif
-```
-# you can pass parameters to blade directives
-```php
-// in app serviceprovider
+// Binding
 Blade::directive('newlinesToBr', function ($expression) {
     return "<?php echo nl2br({$expression}); ?>";
 });
+// In use
+<p>@newlinesToBr($message->body)</p>
+```
+## if directive is made for if statment
+- you can write that as that:
+```php
+Blade::if('ifPublic', function () {
+    return (app('context'))->isPublic();
+});
+```
+- instead of that 
+```php
+Blade::directive('ifGuest', function () {
+    return "<?php if (auth()->guest()): ?>";
+});
+```
 
-// in blade
-@newlinesToBr('coco')
+# cache and blade directives
+- it is not a good practice to use directives in providers if it contains variables because of caching, if you have variables they will be compiled cached and stored in `storage/framework/views` and it will not updates it's values until you make update to your code in the template (they will store only the value of these varible) like that `if(1)` not `if($isGuest)`
+
+- if there is no updates i made to my blade laravel will go always and run that cashed file, so always notice how your code is cashed :"
+
+- notice those for more clarification :"
+
+```php
+// code inside loma.blade.php
+
+@ifGuest
+{{ 'welcome loma:"' }}
+@endif
+<div class="container">
+    Hello, {{ 'coco' }}.
+</div>
+```
+
+## problem :(
+```php
+// code inside service proider
+
+Blade::directive('ifGuest', function () {
+// Antipattern! Do not copy.
+$ifGuest = auth()->guest();
+return "<?php if ({$ifGuest}): ?>";
+});
+```
+- cashed code
+```php
+<?php if (1): ?> // notice that @ifGuest store as if (1) static value:"
+<?php echo e('welcome loma:"'); ?>
+
+<?php endif; ?>
+
+<div class="container">
+    Hello, <?php echo e('coco'); ?>.
+</div>
+<?php /**PATH C:\xampp\htdocs\laravel\practice\resources\views/loma.blade.php ENDPATH**/ ?>
+```
+**the problem here now what if the user login, will the app notice that?**
+*no it won't notice :(*
+
+## to solve it :)
+- update code in service provider
+```php
+// code inside service proider
+
+Blade::directive('ifGuest', function () {
+    // Antipattern! Do not copy.
+    return "<?php if (auth()->guest()): ?>";
+});
+```
+- cashed code
+```php
+<?php if (auth()->guest()): ?>
+<?php echo e('welcome loma:" '); ?>
+
+<?php endif; ?>
+
+<div class="container">
+    Hello, <?php echo e('coco'); ?>.
+</div>
+<?php /**PATH C:\xampp\htdocs\laravel\practice\resources\views/loma.blade.php ENDPATH**/ ?>
 ```

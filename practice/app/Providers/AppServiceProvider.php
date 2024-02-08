@@ -33,5 +33,12 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('newlinesToBr', function ($expression) {
             return "<?php echo nl2br({$expression}); ?>";
         });
+
+        // code inside service proider
+
+        Blade::directive('ifGuest', function () {
+            // Antipattern! Do not copy.
+            return "<?php if (auth()->guest()): ?>";
+        });
     }
 }

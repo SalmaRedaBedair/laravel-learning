@@ -12,10 +12,13 @@ loma --}}
         Here are the rules for valid passwords: [...]</p>
     <p><a href="#">...</a></p>
 </x-modal2> --}}
-
+{{--
 @section('loma')
     <p>dodo</p>
     @stop
     <p>saloma</p>
-@endsection
+@endsection --}}
 
+@ifGuest
+    {{ 'loma' }}
+@endif

@@ -1,5 +1,7 @@
-@verbatim
-    <div class="container">
-        Hello, {{ name }}.
-    </div>
-@endverbatim
+@ifGuest
+{{ 'welcome loma:" ' }}
+@endif
+
+<div class="container">
+    Hello, {{ 'coco' }}.
+</div>
