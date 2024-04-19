@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Models\User;
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -11,8 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return 'index of user';
+        return User::with('posts')->get();
     }
+
 
     /**
      * Show the form for creating a new resource.

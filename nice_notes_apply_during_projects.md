@@ -178,3 +178,22 @@ Route::fallback(function () {
 # view()->share('variableName', 'variableValue');
 - share variable over all view pages
 
+# translation
+- collection of queries that will be all performed or none
+- if there is exception at any queries all queries will be rolled back
+- transaction is a part of patch
+- patch may contain many transactions
+- make transaction in laravel:
+```php
+DB::transaction(function () use ($userId, $numVotes) {
+// Possibly failing DB query
+DB::table('users')
+    ->where('id', $userId)
+    ->update(['votes' => $numVotes]);
+    // Caching query that we don't want to run if the above query fails
+DB::table('votes')
+    ->where('user_id', $userId)
+    ->delete();
+});
+```
+- recommended to use it in case i have two queries related to each other

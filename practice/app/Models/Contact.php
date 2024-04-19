@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
     use HasFactory;
-    protected $fillable=['phone'];
-    protected $dates = ['deleted_at'];
+    public function stars()
+    {
+        return $this->morphMany(Star::class, 'starrable');
+    }
 }

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Post;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -12,7 +14,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $post=Post::factory()->create();
+//        $post->title="loma";
+//        $post->save();
+        dd($post->title, $post);
     }
 
     /**

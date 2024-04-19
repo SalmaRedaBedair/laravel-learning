@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Assignment;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AssignmentController extends Controller
 {
@@ -12,7 +14,23 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        //
+//        $user=User::factory()
+//            ->has(
+//                Assignment::factory()
+//                    ->count(3)
+//                    ->state(function (array $attributes, User $user) {
+//                        return ['title' => $user->name . ' title'];
+//                    })
+//            )
+//            ->create();
+//        dd($user->Assignments);
+
+        $userId=User::latest()->first()->id;
+        $print=DB::table('users')
+            ->where('id', $userId)
+            ->update(['name' => 'sally', 'email' => 'mhh@gmail.com', 'password' => 'hashed_password', 'plan_rate_limit' => 2]);
+
+        dd($print);
     }
 
     /**

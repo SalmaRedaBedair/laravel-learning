@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('plan_rate_limit');
             $table->rememberToken();
             $table->timestamps();
         });

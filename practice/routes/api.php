@@ -36,3 +36,7 @@ Route::post('something-you-cant-do', function (Illuminate\Http\Request $request)
     abort_if($request->user()->isBanned, 403);
 });
 
+
+Route::post('pay', [\App\Http\Controllers\PaymentController::class,'payOrder']);
+Route::get('call_back',[\App\Http\Controllers\PaymentController::class,'callBack']);
+
