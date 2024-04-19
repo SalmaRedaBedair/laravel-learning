@@ -1,3 +1,141 @@
+# chapter 07
+```text
+collecting and handling user data
+```
+## injecting a request object
+- $request instance give access to data posted form, get(parameter search) and url segments
+- request() helper and Request facade give the same methods of $request instance
+### $request->all()
+- return all data use input from different sources
+- notice that example
+```php
+<!-- GET route form view at /get-route -->
+<form method="post" action="/signup?utm=12345">
+    @csrf
+    <input type="text" name="first_name">
+    <input type="submit">
+</form>
+// routes/web.php
+Route::post('signup', function (Request $request) {
+var_dump($request->all());
+});
+# notice that data contain data in the form and data passed through query parameters
+// Outputs:
+/**
+* [
+* '_token' => 'CSRF token here',
+* 'first_name' => 'value',
+* 'utm' => 12345,
+* ]
+*/
+```
+### $request->except()
+- exclude selected data to return
+- that data can be form any different sources
+### $request->only()
+- choose selected data to return
+- that data can be form any different sources
+### $request->has() & $request->missing()
+- check whether that data is passed or not
+```php
+if ($request->has('utm')) {
+    // Do some analytics work
+}
+```
+### $request->whenHas()
+- define behavior when that data is passed or not
+- the first closure function will be called when that data is passed
+- the second closure function will be called when that data is not passed
+```php
+$utm = $request->whenHas('utm', function($utm) {
+    return $utm;
+}, function() {
+    return 'default';
+});
+```
+### $request->filled()
+- same as $request->has() but it also check if that data is empty or not
+- try to test that route for more explanation
+```php
+// http://127.0.0.1:8000/chapter6?name=
+
+Route::get('chapter6', function (\Illuminate\Http\Request $request)
+{
+    dd($request->has('name'), $request->filled('name'));
+});
+
+// Outputs:
+/**
+* true, false
+ */
+```
+### $request->whenFilled()
+- similar to $request->whenHas() but it also check if that data is empty or not
+### $request->mergeIfMissing()
+- merge data if that data is not passed
+- that will be helpful in case if i have checkboxes, those checkboxes will not be passed if they are not selected
+```php
+Route::post('chapter6', function (\Illuminate\Http\Request $request)
+{
+    $request->mergeIfMissing(['send_newsletter'=>0]);
+    dd($request->all());
+});
+```
+### $request->input()
+- it return only the value of specified input field
+- it take 2 parameters:
+  - the first parameter is the name of the input field
+  - the second parameter is the default value, value return if the input field is not passed
+- try that example for more explanation
+```php
+Route::post('post-route', function (Request $request) {
+    $userName = $request->input('name', 'Matt');
+});
+// Outputs:
+/**
+* if the input field is not passed, Matt will be returned
+* if the input field is passed, the value passed will be returned
+* if the input field is passed, but with no value, it will return null
+ */
+```
+### $request->method() & $request->is_method()
+- $request->method() return the request method (GET, POST, PUT, PATCH, DELETE, OPTIONS)
+- $request->is_method() return true if the request method is the same as the parameter
+### $request->integer(), ->float(), ->string(), and ->enum()
+- cast input fields
+### $request->dump() & $request->dd()
+- dump whole request object
+- dump: dump whole request object and continue the code
+- dd: dump whole request object and stop the code
+### array input
+- use dot notation to access the structure of the array passed in the request
+```php
+<!-- GET route form view at /employees/create -->
+<form method="post" action="/employees/">
+@csrf
+<input type="text" name="employees[0][firstName]">
+<input type="text" name="employees[0][lastName]">
+<input type="text" name="employees[1][firstName]">
+<input type="text" name="employees[1][lastName]">
+<input type="submit">
+</form>
+// POST route at /employees
+Route::post('employees', function (Request $request) {
+$employeeZeroFirstName = $request->input('employees.0.firstName');
+$allLastNames = $request->input('employees.*.lastName');
+$employeeOne = $request->input('employees.1');
+var_dump($employeeZeroFirstname, $allLastNames, $employeeOne);
+});
+// If forms filled out as "Jim" "Smith" "Bob" "Jones":
+// $employeeZeroFirstName = 'Jim';
+// $allLastNames = ['Smith', 'Jones'];
+// $employeeOne = ['firstName' => 'Bob', 'lastName' => 'Jones'];
+```
+### JSON Input (and $request->json())
+- 
+### request('firstName') & $request->input('firstName')
+- request('firstName') is a shortcut to request()->input('firstName'))
+
 # validations
 - there is two types of validation i may use
   - request

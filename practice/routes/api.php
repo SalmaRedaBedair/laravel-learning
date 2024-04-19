@@ -40,3 +40,7 @@ Route::post('something-you-cant-do', function (Illuminate\Http\Request $request)
 Route::post('pay', [\App\Http\Controllers\PaymentController::class,'payOrder']);
 Route::get('call_back',[\App\Http\Controllers\PaymentController::class,'callBack']);
 
+Route::post('chapter6', function (\Illuminate\Http\Request $request)
+{
+    $request->dump();
+});

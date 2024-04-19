@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\Api\HomeController as ApiHomeController;
-use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\InvitationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -258,3 +256,5 @@ Route::middleware(['auth','role:admin'])
 Route::post('comment',[\App\Http\Controllers\HomeController::class,'save_comment'])->name('comment.save');
 
 Route::get('user', [UserController::class, 'index'])->name('user.index');
+
+
