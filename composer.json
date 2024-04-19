@@ -1,6 +1,0 @@
-{
-    "require": {
-        "ayman-elmalah/laravel-myfatoorah": "^1.0",
-        "spatie/laravel-permission": "^6.4"
-    }
-}
