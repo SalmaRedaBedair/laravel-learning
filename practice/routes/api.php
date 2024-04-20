@@ -40,7 +40,10 @@ Route::post('something-you-cant-do', function (Illuminate\Http\Request $request)
 Route::post('pay', [\App\Http\Controllers\PaymentController::class,'payOrder']);
 Route::get('call_back',[\App\Http\Controllers\PaymentController::class,'callBack']);
 
-Route::post('chapter6', function (\Illuminate\Http\Request $request)
+Route::post('chapter7/{id}', function (Request $request)
 {
-    $request->dump();
+//    $request->validate([
+//        'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//    ]);
+    dd($request->hasFile('file'));
 });
