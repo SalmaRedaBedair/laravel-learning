@@ -135,7 +135,73 @@ var_dump($employeeZeroFirstname, $allLastNames, $employeeOne);
 - 
 ### request('firstName') & $request->input('firstName')
 - request('firstName') is a shortcut to request()->input('firstName'))
-
+## Route data 
+```text
+there is two ways to get data from url: via Request object and via Route parameters
+```
+### From Request
+- _what is segment?_
+  - every group of characters after domain name in url is called segment
+  ```text
+  http://www.myapp.com/users/15 
+  ```
+  - that url has two segments: users and 15
+  - we have two available methods to get data from url
+     - request()->segment(segment_number)
+        - ex: request()->segment(1) returns 15
+     - $request->segments() => returns array of segments [users, 15]
+  - those segments are 1-based index
+  - notice that example two
+  ```text
+  http://127.0.0.1:8000/api/chapter7/1
+  ```
+  - that have three segments: api, chapter7, 1
+  - to define it in routes/api.php
+  ```php
+  Route::get('users/{id}', function ($id) {
+      
+  })
+  ```
+### From Route Parameters
+- are segments i inject into function or controller
+```php
+// routes/web.php
+Route::get('users/{id}', function ($id) {
+    // If the user visits myapp.com/users/15/, $id will equal 15
+});
+```
+## uploaded files
+- i can get any uploaded file using `$request->file()` it take file name as parameter and return an instance of `Illuminate\Http\Foundation\File\UploadedFile`
+- note that if i use `$request->input('fileName')` it will return null, I must use `$request->file('fileName')` instead
+### validating file upload
+- i can user method `isValid()` to check if the file uploaded successfully or not using that 
+```php
+if ($request->file('profile_picture')->isValid()) {
+    //
+}
+```
+- but it will give me error if user didn't upload the file, so i must use `$request->hasFile('profile_picture')` first
+```php
+if ($request->hasFile('profile_picture') &&
+    $request->file('profile_picture')->isValid()) {
+    //
+}
+```
+### store file
+- i can use `store` method to store uploaded file to disk 
+- it take 2 parameters
+- the first parameter is the name of the destination directory
+- the second parameter is the name of the disk(s3, local, etc)
+```php
+if ($request->hasFile('profile_picture')) {
+    $path = $request->profile_picture->store('profiles', 's3');
+    auth()->user()->profile_picture = $path;
+    auth()->user()->save();
+}
+```
+### multipart/form-data
+- never to forget to add `enctype="multipart/form-data"` to the form or `content-type: multipart/form-data` in the header of postman
+- if you upload file and give you null it might be because you forget to add `multipart/form-data` to the form or header
 # validations
 - there is two types of validation i may use
   - request

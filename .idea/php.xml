@@ -1,41 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
-  <component name="ChangeListManager">
-    <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_07.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_07.md" afterDir="false" />
-    </list>
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
-  <component name="ComposerConfigs">
-    <option name="configs">
-      <option value="$PROJECT_DIR$/practice/composer.json" />
-    </option>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files\php-8.2.1\php.exe">
+  <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
@@ -261,138 +236,13 @@
       <path value="$PROJECT_DIR$/practice/vendor/laravelcollective/html" />
     </include_path>
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
-}</component>
-  <component name="ProjectId" id="2bfUVm4bVTxacq43XxHEmRPU7RN" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.laravel-idea.update-module-directories&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Green-Revive-Backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\laravel\practice\public" />
-    </key>
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
-  <component name="RunManager" selected="Pest.Main">
-    <configuration name="practice" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
-      <method v="2" />
-    </configuration>
-    <configuration name="C:\xampp\htdocs\laravel\practice\vendor\pestphp\pest\bin\pest" type="PestRunConfigurationType">
-      <option name="pestRunnerSettings">
-        <PestRunner configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
-      </option>
-      <option name="runnerSettings">
-        <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
-      </option>
-      <method v="2" />
-    </configuration>
-    <configuration name="Main" type="PestRunConfigurationType">
-      <option name="pestRunnerSettings">
-        <PestRunner configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
-      </option>
-      <option name="runnerSettings">
-        <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
-      </option>
-      <method v="2" />
-    </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14475.35" />
-      </set>
-    </attachedChunks>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="" />
-      <created>1706605655266</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1706605655266</updated>
-      <workItem from="1706605655956" duration="2929000" />
-      <workItem from="1706894898675" duration="1796000" />
-      <workItem from="1707046476175" duration="10000" />
-      <workItem from="1707585464119" duration="5145000" />
-      <workItem from="1707734762645" duration="3739000" />
-      <workItem from="1707770610466" duration="3064000" />
-      <workItem from="1707812970368" duration="2416000" />
-      <workItem from="1707815901931" duration="3925000" />
-      <workItem from="1707935726872" duration="260000" />
-      <workItem from="1708074400799" duration="4560000" />
-      <workItem from="1708290174568" duration="109000" />
-      <workItem from="1708425280761" duration="2619000" />
-      <workItem from="1708501406223" duration="3458000" />
-      <workItem from="1708591137617" duration="813000" />
-      <workItem from="1708595550028" duration="8000" />
-      <workItem from="1708616869594" duration="927000" />
-      <workItem from="1708633074819" duration="3347000" />
-      <workItem from="1708691716599" duration="21327000" />
-      <workItem from="1708803156513" duration="410000" />
-      <workItem from="1708820806859" duration="153000" />
-      <workItem from="1708856191626" duration="72000" />
-      <workItem from="1709219633342" duration="19267000" />
-      <workItem from="1709364723555" duration="661000" />
-      <workItem from="1709389730376" duration="1303000" />
-      <workItem from="1709391068042" duration="915000" />
-      <workItem from="1709447564936" duration="5749000" />
-      <workItem from="1709524374350" duration="32000" />
-      <workItem from="1709553952032" duration="5630000" />
-      <workItem from="1709560414519" duration="511000" />
-      <workItem from="1709718368438" duration="20000" />
-      <workItem from="1709718584844" duration="340000" />
-      <workItem from="1709718940663" duration="3555000" />
-      <workItem from="1709838549311" duration="611000" />
-      <workItem from="1709849207917" duration="1250000" />
-      <workItem from="1709922389823" duration="599000" />
-      <workItem from="1710350575967" duration="7804000" />
-      <workItem from="1710399302065" duration="40000" />
-      <workItem from="1710784178354" duration="6788000" />
-      <workItem from="1710870523722" duration="6322000" />
-      <workItem from="1710964248945" duration="3311000" />
-      <workItem from="1710969648135" duration="283000" />
-      <workItem from="1710969951182" duration="734000" />
-      <workItem from="1713504648707" duration="6108000" />
-      <workItem from="1713512299560" duration="2152000" />
-      <workItem from="1713546833562" duration="31000" />
-      <workItem from="1713621981782" duration="4195000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
 </project>
