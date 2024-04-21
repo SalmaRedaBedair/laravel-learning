@@ -204,6 +204,7 @@ if ($request->hasFile('profile_picture')) {
 - if you upload file and give you null it might be because you forget to add `multipart/form-data` to the form or header
 
 
+
 # validations
 - there is two types of validation i may use
   - request
