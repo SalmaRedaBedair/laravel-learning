@@ -204,6 +204,84 @@ if ($request->hasFile('profile_picture')) {
 - if you upload file and give you null it might be because you forget to add `multipart/form-data` to the form or header
 
 # validations
+## validate() on the Request Object
+- it take an array of validation rules
+- if validation pass it will continue the code
+- if validation fail it will stop the code and throw an exception
+### required validation
+- required
+- required_if:anotherField,equalToThisValue;
+- required_unless:anotherField,equalToThisValue
+```php
+$request->validate([
+   'type' => 'required',
+   'file' => 'required_unless:type,admin',
+]);
+```
+### exclude
+- exclude_if:anotherField,equalToThisValue;
+- exclude_unless:anotherField,equalToThisValue
+
+## manual validation
+```php
+Validator::make($request->all(), [
+'title' => 'required|unique:recipes|max:125',
+'body' => 'required'
+]);
+```
+- the difference between it and `$request->validate()` is that `$request->validate()` will throw an exception if validation fail
+- that way needs me to check for success or failure
+```php
+if ($validator->fails()) {
+return redirect('recipes/create')
+    ->withErrors($validator)
+    ->withInput();
+}
+```
+## using validated data
+- `$request->validated()` it will return an array of all data that has been validated
+- `$request->safe()` it will return an array that give you access to `all(), only(), except()`
+- safe same as validated but with it i can customize what i want to get
+## custom rule object
+```text
+if validation rule you need doesn't exist in Laravel, you can create your own rule
+```
+```text
+run php artisan make:rule RuleName
+```
+```php
+public function validate(string $attribute, mixed $value, Closure
+$fail): void
+{
+    if(! in_array(Str::after($value, '@'), ['tighten.co'])){
+        $fail('The :attribute field is not from an allowed email
+             provider.');
+    }
+}
+
+// usage
+'email' => new AllowedEmailDomain,
+```
+## displaying validation error messages
+- error messages from validation are flashed to the session
+- all errors are sored in view you are directed in `$errors` variable
+- `$errors` variable is passed automatically to every view, so you haven't to check if it is saved or not
+- to display them in blade
+```php
+@if ($errors->any())
+<ul id="errors">
+@foreach ($errors->all() as $error)
+<li>{{ $error }}</li>
+@endforeach
+</ul>
+@endif
+```
+- or check for specific error and return
+```php
+@error('first_name')
+<span>{{ $message }}</span>
+@enderror
+```
 
 
 # show errors

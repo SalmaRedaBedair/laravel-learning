@@ -42,8 +42,9 @@ Route::get('call_back',[\App\Http\Controllers\PaymentController::class,'callBack
 
 Route::post('chapter7/{id}', function (Request $request)
 {
-//    $request->validate([
-//        'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-//    ]);
-    dd($request->hasFile('file'));
+    $validator = Validator::make($request->all(),[
+        'type' => 'required',
+        'file' => 'required_unless:type,admin',
+    ]);
+    dd($validator->safe()->all());
 });
