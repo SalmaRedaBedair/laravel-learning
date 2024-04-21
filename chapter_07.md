@@ -202,6 +202,7 @@ if ($request->hasFile('profile_picture')) {
 ### multipart/form-data
 - never to forget to add `enctype="multipart/form-data"` to the form or `content-type: multipart/form-data` in the header of postman
 - if you upload file and give you null it might be because you forget to add `multipart/form-data` to the form or header
+
 # validations
 - there is two types of validation i may use
   - request
