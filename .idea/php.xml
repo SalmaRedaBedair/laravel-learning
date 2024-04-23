@@ -234,6 +234,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/practice/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/practice/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/practice/vendor/_laravel_idea" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
