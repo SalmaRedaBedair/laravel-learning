@@ -42,9 +42,9 @@ use function Pest\Laravel\post;
 //Route::redirect('redirect-by-route', 'login');
 //
 //
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/', function () {
+    return view('welcome');
+});
 //
 //// Route::get('/test1', function () {
 ////     return view('test1');
@@ -258,3 +258,7 @@ Route::post('comment',[\App\Http\Controllers\HomeController::class,'save_comment
 Route::get('user', [UserController::class, 'index'])->name('user.index');
 
 
+Route::get('/', function () {
+    dump('Dumped Value');
+    return 'Hello World';
+});

@@ -93,6 +93,7 @@ public function up()
 - roll back last batch only
 
 # seeder & factory
+- i must add trait `HasFactory` to model
 - add fake data to database, or add data for admin or const data
 ## factory 
 - add fake data for testing
@@ -1137,4 +1138,11 @@ public function boot(): void
         }
     });
 }
+```
+
+
+## session notes
+```php
+$user->contacts(); // this returns a query builder (still a query)
+$user->contacts; // this runs the query and returns the result
 ```

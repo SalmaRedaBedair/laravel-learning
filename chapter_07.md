@@ -139,7 +139,7 @@ var_dump($employeeZeroFirstname, $allLastNames, $employeeOne);
 ```text
 there is two ways to get data from url: via Request object and via Route parameters
 ```
-### From Request
+### From Request 
 - _what is segment?_
   - every group of characters after domain name in url is called segment
   ```text
@@ -283,6 +283,30 @@ $fail): void
 @enderror
 ```
 
+## form requests
+```text
+input validation, user authentication and user authorization
+```
+### authorize() method
+- in add we add all required authorization to access that method to keep controller clean
+
+### using form request
+- you might wonder where the request is called, laravel handle calling for it for us, you haven't to be afraid of it.
+
+## Eloquent Model Mass Assignment (fillable and guard)
+```text
+we talk about validation at controller level
+you can also do that validation at model level
+```
+- it is common but not recommended to pass the entire data of form request to model
+```php
+Route::post('posts', function (Request $request) {
+    $newPost = Post::create($request->all());
+});
+```
+- it is not recommended because user may pass attributes i don't want user to edit
+- hint: instead of `$request->all()` you can use `$request->validated()` that will return an array of all data that has been validated inside the request object
+- 
 
 # show errors
 ## i my show them as a package above the form

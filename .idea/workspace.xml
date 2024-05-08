@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
+      <change afterPath="$PROJECT_DIR$/APP_KEY_And_You.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter_06.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter_08.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter_09.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter_05.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_05.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter_07.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_07.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/config/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/routes/console.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/routes/console.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,25 +294,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.laravel-idea.search-composer-json": "true",
-    "RunOnceActivity.laravel-idea.update-module-directories": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/xampp/htdocs/Green-Revive-Backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.laravel-idea.update-module-directories&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Green-Revive-Backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\laravel\practice\public" />
@@ -395,8 +406,32 @@
       <workItem from="1713716762578" duration="6493000" />
       <workItem from="1713725403973" duration="182000" />
       <workItem from="1713727651599" duration="2000" />
-      <workItem from="1713894512143" duration="230000" />
+      <workItem from="1713894512143" duration="2787000" />
+      <workItem from="1714033047341" duration="342000" />
+      <workItem from="1714059378526" duration="3397000" />
+      <workItem from="1714213719583" duration="914000" />
+      <workItem from="1714287350130" duration="68000" />
+      <workItem from="1714531368890" duration="2023000" />
+      <workItem from="1714576944894" duration="4223000" />
+      <workItem from="1714628504040" duration="143000" />
+      <workItem from="1714709906598" duration="10565000" />
+      <workItem from="1714757716285" duration="3178000" />
+      <workItem from="1714835543114" duration="1239000" />
+      <workItem from="1714973344020" duration="23000" />
+      <workItem from="1715008357385" duration="656000" />
+      <workItem from="1715060354175" duration="18000" />
+      <workItem from="1715062393012" duration="663000" />
+      <workItem from="1715205451954" duration="1062000" />
     </task>
+    <task id="LOCAL-00001" summary="validation">
+      <option name="closed" value="true" />
+      <created>1713894812546</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713894812546</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,5 +447,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation" />
   </component>
 </project>
