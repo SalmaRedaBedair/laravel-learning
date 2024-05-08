@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
-      <change afterPath="$PROJECT_DIR$/APP_KEY_And_You.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter_06.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter_08.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter_09.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/links.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_05.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_05.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_07.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_07.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/config/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/routes/console.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/routes/console.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +37,9 @@
     &quot;assignee&quot;: &quot;SalmaRedaBedair&quot;
   }
 }</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="e85bbb72-3383-4434-b5e9-f1e001a17d9a" />
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -421,7 +413,7 @@
       <workItem from="1715008357385" duration="656000" />
       <workItem from="1715060354175" duration="18000" />
       <workItem from="1715062393012" duration="663000" />
-      <workItem from="1715205451954" duration="1062000" />
+      <workItem from="1715205451954" duration="2062000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />
