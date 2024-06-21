@@ -92,7 +92,13 @@ Route::get('people', function (Request $request) {
 });
 ```
 ## Message Bags
-- 
+- it is closely connected with validation
+- when there is error return because of validation, it will be returned as an instance of MessageBag 
+### MISSING $ERRORS VARIABLE
+- errors variable is available only in web middleware
+
+## String Helpers, Pluralization, and Localization
+
 
 
 
