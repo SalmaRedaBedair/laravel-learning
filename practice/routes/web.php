@@ -249,7 +249,7 @@ Route::get('posts',[PostController::class, 'index']);
 
 Auth::routes();
 
-Route::middleware(['auth','role:admin'])
+Route::middleware(['auth'])
     ->get('/home', [\App\Http\Controllers\HomeController::class, 'index'])
     ->name('home');
 
@@ -257,8 +257,7 @@ Route::post('comment',[\App\Http\Controllers\HomeController::class,'save_comment
 
 Route::get('user', [UserController::class, 'index'])->name('user.index');
 
-
-Route::get('/', function () {
-    dump('Dumped Value');
-    return 'Hello World';
+Route::middleware('password.confirm')->get('/', function (){
+    return view('welcome');
 });
+

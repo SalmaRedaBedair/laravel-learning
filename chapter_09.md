@@ -49,4 +49,49 @@ protected $guarded = ['author_id'];
 }
 ```
 ## routes/auth.php, Auth Controllers, and Auth Actions
+## remember me
+In web applications, the "Remember Me" functionality typically involves creating a persistent cookie that keeps the user
+logged in even after they close the browser. Here's how it generally works, considering your `expire_on_close` setting:
 
+1. **Session Lifetime (`expire_on_close`):**
+    - When `expire_on_close` is set to `true`, sessions are typically ended when the user closes the browser or 
+   navigates away from the site. This means the session cookie is not persistent.
+
+2. **Remember Me Functionality:**
+    - When a user selects "Remember Me," a separate, persistent cookie is usually set in addition to the session cookie.
+    - This persistent cookie has a longer expiration time, often weeks or months into the future, 
+    depending on the application's settings.
+    - This cookie stores a unique identifier or token that allows the server to recognize the user and automatically log them in,
+   bypassing the usual session expiration.
+
+3. **Behavior:**
+    - If `expire_on_close` is `true`, the session cookie will be deleted when the user closes their browser.
+    - However, the persistent "Remember Me" cookie will remain on the user's device until its expiration date or until 
+   the user manually logs out.
+
+4. **Implementation:**
+    - When implementing "Remember Me," ensure that the persistent cookie's contents are securely managed and validated 
+   on the server side to prevent unauthorized access.
+
+In summary, with `expire_on_close` set to `true`, the "Remember Me" functionality will create a persistent cookie that 
+keeps the user logged in beyond the current session, allowing them to stay logged in even after closing the browser, 
+until they explicitly log out or the persistent cookie expires.
+
+```php
+if (auth()->attempt([
+    'email' => request()->input('email'),
+    'password' => request()->input('password'),
+], request()->filled('remember'))) {
+    // Handle the successful login
+}
+```
+## password confirmation
+- ask user to reconfirm password after visit the page, like billing
+```php
+Route::middleware('password.confirm')->get('/', function (){
+    return view('welcome');
+});
+
+// config/auth.php
+'password_timeout' => 10800, // that time is in seconds = 3 hours
+```

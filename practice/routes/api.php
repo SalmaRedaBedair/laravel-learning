@@ -48,3 +48,15 @@ Route::post('chapter7/{id}', function (Request $request)
     ]);
     dd($validator->safe()->all());
 });
+
+Route::post('/', function () {
+    if (auth()->attempt([
+        'email' => request()->input('email'),
+        'password' => request()->input('password'),
+    ], request()->filled('remember'))) {
+        dd(auth()->user());
+    }else{
+        dd('fail');
+    }
+
+});

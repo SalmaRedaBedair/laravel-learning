@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\MarkNotificationAsRead;
+use Illuminate\Auth\Middleware\RequirePassword;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
