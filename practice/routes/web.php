@@ -247,7 +247,7 @@ Route::get('posts',[PostController::class, 'index']);
 //Route::get('call_back',[\App\Http\Controllers\MyFatoorahController::class,'callback'])->name('myfatoorah.callback');
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::middleware(['auth'])
     ->get('/home', [\App\Http\Controllers\HomeController::class, 'index'])
@@ -257,7 +257,8 @@ Route::post('comment',[\App\Http\Controllers\HomeController::class,'save_comment
 
 Route::get('user', [UserController::class, 'index'])->name('user.index');
 
-Route::middleware('password.confirm')->get('/', function (){
+Route::middleware('auth')->get('/', function (){
+    auth()->loginUsingId(1);
     return view('welcome');
 });
 

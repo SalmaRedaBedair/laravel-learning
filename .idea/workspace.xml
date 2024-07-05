@@ -7,10 +7,6 @@
     <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter_09.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_09.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/config/session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/practice/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -429,7 +425,7 @@
       <workItem from="1718969535131" duration="1279000" />
       <workItem from="1718988909913" duration="48000" />
       <workItem from="1720023248597" duration="3667000" />
-      <workItem from="1720111435827" duration="3490000" />
+      <workItem from="1720111435827" duration="6057000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />

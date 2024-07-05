@@ -95,3 +95,39 @@ Route::middleware('password.confirm')->get('/', function (){
 // config/auth.php
 'password_timeout' => 10800, // that time is in seconds = 3 hours
 ```
+## Manually Authenticating Users
+- most common case for authentication is to enter username and password and use attempt() method to see whether they match or not
+- but some times i want to manually authenticate specific user
+### for all requests
+```php
+auth()->loginUsingId(5);
+
+auth()->login($user); // pass any object that implements the illuminate\Contracts\Auth\Authenticatable contract
+````
+
+### for only current request
+```php
+auth()->once(['username' => 'mattstauffer']); // pass any data that identifies the user you want to authenticate
+// or
+auth()->onceUsingId(5);
+```
+
+## Manually Logging Out a User
+```php
+auth()->logout();
+```
+### Invalidating Sessions on Other Devices
+```php
+auth()->logoutOtherDevices($password);
+```
+## Email verification
+- to enable email verification for all route use:
+```php
+Auth::routes(['verify' => true]);
+```
+- to enable email verification for specific route use:
+```php
+Route::get('posts/create', function () {
+    // Only verified users may enter...
+})->middleware('verified');
+```
