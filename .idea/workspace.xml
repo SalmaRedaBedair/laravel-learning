@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
-      <change afterPath="$PROJECT_DIR$/chapter_10.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Requests/ProfileUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Requests/ProfileUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/routes/api.php" afterDir="false" />
-    </list>
+    <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -434,7 +427,7 @@
       <workItem from="1720781237114" duration="731000" />
       <workItem from="1721247512812" duration="6000" />
       <workItem from="1721327557331" duration="707000" />
-      <workItem from="1721672290784" duration="323000" />
+      <workItem from="1721672290784" duration="788000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />
