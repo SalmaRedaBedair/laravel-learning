@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation" />
+    <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
+      <change afterPath="$PROJECT_DIR$/Auth_elsafaddi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blade.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter_09.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_09.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/practice/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/AuthenticatedSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/AuthenticatedSessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/ConfirmablePasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/ConfirmablePasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/EmailVerificationPromptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/EmailVerificationPromptController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/NewPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/NewPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/PasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/PasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/PasswordResetLinkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/PasswordResetLinkController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/RegisteredUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/RegisteredUserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Requests/ProfileUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Requests/ProfileUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/practice/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/practice/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/practice/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/practice/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/resources/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/practice/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/tests/Feature/Auth/PasswordUpdateTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/tests/Feature/Auth/PasswordUpdateTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/tests/Feature/ProfileTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/tests/Feature/ProfileTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/practice/vite.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,52 +79,6 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files\php-8.2.1\php.exe">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/uri-template" />
-      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/collections" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/conditionable" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/filesystem" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/http" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/macroable" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/session" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php83" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/support" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/vendor/ayman-elmalah/laravel-myfatoorah" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/psr/clock" />
-      <path value="$PROJECT_DIR$/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
-      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/vendor/carbonphp/carbon-doctrine-types" />
-      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
-      <path value="$PROJECT_DIR$/vendor/fruitcake/php-cors" />
-      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/practice/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/practice/vendor/spatie/backtrace" />
       <path value="$PROJECT_DIR$/practice/vendor/spatie/ignition" />
@@ -251,29 +233,11 @@
       <path value="$PROJECT_DIR$/practice/vendor/psr/clock" />
       <path value="$PROJECT_DIR$/practice/vendor/symfony/var-exporter" />
       <path value="$PROJECT_DIR$/practice/vendor/symfony/cache" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/container" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/console" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/bus" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/pipeline" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/auth" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/view" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/database" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/queue" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/events" />
-      <path value="$PROJECT_DIR$/vendor/laravel/serializable-closure" />
-      <path value="$PROJECT_DIR$/vendor/nunomaduro/termwind" />
-      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
-      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
-      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
-      <path value="$PROJECT_DIR$/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/vendor/brick/math" />
-      <path value="$PROJECT_DIR$/vendor/symfony/string" />
-      <path value="$PROJECT_DIR$/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
-      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/practice/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/practice/vendor/laravelcollective/html" />
       <path value="$PROJECT_DIR$/practice/vendor/_laravel_idea" />
+      <path value="$PROJECT_DIR$/practice/vendor/inertiajs/inertia-laravel" />
+      <path value="$PROJECT_DIR$/practice/vendor/tightenco/ziggy" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -309,6 +273,10 @@
     </key>
   </component>
   <component name="RunManager" selected="Pest.Main">
+    <configuration name="C:\xampp\htdocs\laravel\practice\vendor\autoload.php" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
     <configuration name="practice" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
       <method v="2" />
@@ -317,17 +285,11 @@
       <option name="pestRunnerSettings">
         <PestRunner configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
       </option>
-      <option name="runnerSettings">
-        <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
-      </option>
       <method v="2" />
     </configuration>
     <configuration name="Main" type="PestRunConfigurationType">
       <option name="pestRunnerSettings">
         <PestRunner configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
-      </option>
-      <option name="runnerSettings">
-        <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
       </option>
       <method v="2" />
     </configuration>
@@ -427,7 +389,9 @@
       <workItem from="1720781237114" duration="731000" />
       <workItem from="1721247512812" duration="6000" />
       <workItem from="1721327557331" duration="707000" />
-      <workItem from="1721672290784" duration="788000" />
+      <workItem from="1721672290784" duration="1455000" />
+      <workItem from="1721706904113" duration="93000" />
+      <workItem from="1721707014734" duration="2505000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />
@@ -437,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713894812546</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="validation">
+      <option name="closed" value="true" />
+      <created>1721673088938</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721673088938</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

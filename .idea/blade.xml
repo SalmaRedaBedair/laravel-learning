@@ -90,6 +90,8 @@
       <data directive="@includeFirst" injection="true" prefix="&lt;?php&#10;echo $__env-&gt;first(" suffix=", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))-&gt;render(); ?&gt;" />
       <data directive="@includeUnless" injection="true" prefix="&lt;?php&#10;echo $__env-&gt;renderUnless(" suffix=", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path'])); ?&gt;" />
       <data directive="@includeWhen" injection="true" prefix="&lt;?php&#10;echo $__env-&gt;renderWhen(" suffix=", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path'])); ?&gt;" />
+      <data directive="@inertia" />
+      <data directive="@inertiaHead" />
       <data directive="@isset" injection="true" prefix="&lt;?php&#10;if(isset(" suffix=")): ?&gt;" />
       <data directive="@js" injection="true" prefix="&lt;?php _bladeDirective(" suffix="); ?&gt;" />
       <data directive="@json" injection="true" prefix="&lt;?php&#10;echo json_encode(" suffix=") ?&gt;" />

@@ -131,3 +131,4 @@ Route::get('posts/create', function () {
     // Only verified users may enter...
 })->middleware('verified');
 ```
+## Guards
