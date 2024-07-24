@@ -5,33 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
-      <change afterPath="$PROJECT_DIR$/Auth_elsafaddi.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/blade.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_09.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_09.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/practice/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/AuthenticatedSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/AuthenticatedSessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/ConfirmablePasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/ConfirmablePasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/EmailVerificationPromptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/EmailVerificationPromptController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/NewPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/NewPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/PasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/PasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/PasswordResetLinkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/PasswordResetLinkController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/RegisteredUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/Auth/RegisteredUserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Requests/ProfileUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Requests/ProfileUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/practice/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/practice/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/practice/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/practice/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/practice/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/tests/Feature/Auth/PasswordUpdateTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/tests/Feature/Auth/PasswordUpdateTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/tests/Feature/ProfileTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/tests/Feature/ProfileTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/practice/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth_elsafaddi.md" beforeDir="false" afterPath="$PROJECT_DIR$/Auth_elsafaddi.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,11 +261,17 @@
       <option name="pestRunnerSettings">
         <PestRunner configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
       </option>
+      <option name="runnerSettings">
+        <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
+      </option>
       <method v="2" />
     </configuration>
     <configuration name="Main" type="PestRunConfigurationType">
       <option name="pestRunnerSettings">
         <PestRunner configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
+      </option>
+      <option name="runnerSettings">
+        <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
       </option>
       <method v="2" />
     </configuration>
@@ -391,7 +373,9 @@
       <workItem from="1721327557331" duration="707000" />
       <workItem from="1721672290784" duration="1455000" />
       <workItem from="1721706904113" duration="93000" />
-      <workItem from="1721707014734" duration="2505000" />
+      <workItem from="1721707014734" duration="2581000" />
+      <workItem from="1721752733823" duration="1448000" />
+      <workItem from="1721789448611" duration="3364000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />

@@ -8,4 +8,38 @@
 
 ## webpack.mix.js file
 - it is used to write code that will transfer folders in resources to public, when i run npm run dev/prod
-- 
+
+## guard
+- it is used with session
+```php
+'web' => [
+    'driver' => 'session',
+    'provider' => 'users',
+],
+```
+## sanctum
+- it uses tokens, there is no guard here 
+```php
+'api' => [
+    'driver' => 'sanctum',
+    'provider' => 'users',
+]
+```
+## test
+```php
+Route::get('/test-guards', function () {
+    $userFromWebGuard = Auth::user();
+    $userFromApiGuard = Auth::guard('sanctum')->user();
+
+    dd($userFromWebGuard, $userFromApiGuard, Auth::guard('api')->user());
+});
+```
+- guard sanctum is the same as api
+
+## important notes while making auth of my code base
+- don't add password to fillable of user
+- while updating password use `forceFill`
+
+## important notes in general for all project
+- handle all exceptions in Exceptions/Handler.php
+- make events for email and notifications
