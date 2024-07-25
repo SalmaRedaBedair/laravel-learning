@@ -39,7 +39,18 @@ Route::get('/test-guards', function () {
 ## important notes while making auth of my code base
 - don't add password to fillable of user
 - while updating password use `forceFill`
+- make end point to logout from current device
+- make end point to logout from all devices
+- make end point to logout from specific device(rather than current one)
+- handle social login
 
 ## important notes in general for all project
 - handle all exceptions in Exceptions/Handler.php
 - make events for email and notifications
+
+## web & api auth
+- web => auth with session, use cookies
+- api => auth with sanctum, token
+
+## difference between passport and sanctum
+- passport can be used when i want to login to my account using google 
