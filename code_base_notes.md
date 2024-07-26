@@ -16,3 +16,7 @@ those are notes that i will apply to my code base while making it
 - make events for email and notifications
 - make chat messages hashed
 - use controller authorization and middleware authorization
+- use commands and stubs to create your own module and remove it
+- read from book while making stubs and commands and anything similar to can write more nice code
+- php artisan publish:stub
+- 
