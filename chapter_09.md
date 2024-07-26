@@ -285,3 +285,4 @@ if(Gate::denies('advertisement.delete', $Advertisement)){
    return $this->respondWithErrors(__('Unauthorized action.'), 403);
 }
 ```
+### Controller Authorization
