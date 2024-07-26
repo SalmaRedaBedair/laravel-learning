@@ -285,4 +285,68 @@ if(Gate::denies('advertisement.delete', $Advertisement)){
    return $this->respondWithErrors(__('Unauthorized action.'), 403);
 }
 ```
+## The Authorize Middleware
+- you can use authorize middleware which has shortcut `can`
+```php
+namespace App\Policies;
+
+class AdvertisementPolicy
+{
+    public function delete(User $user, Advertisement $advertisement)
+    {
+        return $user->id === $advertisement->user_id;
+    }
+}
+
+// inside AuthServiceProvider
+protected $policies = [
+    Advertisement::class => AdvertisementPolicy::class,
+];
+
+public function boot(): void
+{
+    $this->registerPolicies();
+}
+
+// inside api.php
+Route::middleware('can:delete,Advertisement')->delete('advertisement/{Advertisement}', [AdvertisementController::class, 'destroy']);
+```
+
 ### Controller Authorization
+- app/Http/Controllers/Controller.php imports AuthorizesRequests trait, which provides three methods for authorization:
+  - authorize
+  - authorizeForUser
+  - authorizeResource
+- those methods has the same usage as denies, allows and forUser which are used with the `Gate` facade
+- now let's see how it works
+- in the previous example, i use those three lines to check for authorization
+- **authorize**
+```php
+if (Gate::denies('update-contact', $contact)) {
+    abort(403);
+}
+```
+- if we look at `authorize` method inside `AuthorizesRequests` trait
+```php
+    public function authorize($ability, $arguments = [])
+    {
+        [$ability, $arguments] = $this->parseAbilityAndArguments($ability, $arguments);
+
+        return app(Gate::class)->authorize($ability, $arguments);
+    }
+```
+- that will check for current abilities and return 403 unauthorized if not allowed
+- now i can remove the above three lines with that only one line
+```php
+$this->authorize('update-contact', $contact);
+```
+- also **authorizeForUser** does the same thing as `Gate::forUser`, but it will reduce 2 lines
+- **authorizeResource**
+  - we can use it inside constructor to call resource policy
+  ```php
+    public function __construct()
+    {
+        $this->authorizeResource(Contact::class);
+    }
+  ```
+  

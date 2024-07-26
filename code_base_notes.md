@@ -15,3 +15,4 @@ those are notes that i will apply to my code base while making it
 - handle all exceptions in Exceptions/Handler.php
 - make events for email and notifications
 - make chat messages hashed
+- use controller authorization and middleware authorization
