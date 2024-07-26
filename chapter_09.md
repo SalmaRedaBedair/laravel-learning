@@ -267,6 +267,7 @@ class AdvertisementPolicy
 }
 ```
 2. register policy in `app/Providers/AuthServiceProvider.php`
+- i can ignore that step if i use conventional naming
 ```php
     protected $policies = [
         Advertisement::class => AdvertisementPolicy::class,
@@ -296,16 +297,6 @@ class AdvertisementPolicy
     {
         return $user->id === $advertisement->user_id;
     }
-}
-
-// inside AuthServiceProvider
-protected $policies = [
-    Advertisement::class => AdvertisementPolicy::class,
-];
-
-public function boot(): void
-{
-    $this->registerPolicies();
 }
 
 // inside api.php
