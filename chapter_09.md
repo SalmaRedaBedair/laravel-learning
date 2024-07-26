@@ -132,3 +132,156 @@ Route::get('posts/create', function () {
 })->middleware('verified');
 ```
 ## Guards
+- combination of two pieces: driver and provider
+- driver: persists and retrieve authentication state (like session, token)
+  - web guard: use session driver
+  - api guard: use token driver
+- provider: get user by certain criteria (like users, User model)
+```php
+    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'api' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+        ]
+    ],
+```
+### default guard
+- i can change default guard in config/auth.php
+
+### Using Other Guards Without Changing the Default
+- i must define which guard to use
+```php
+$apiUser = auth()->guard('api')->user();
+```
+## Closure Request Guards
+- define how to get current auth user according to request in AuthServiceProvider
+- i can here define to take user by email and password, send them in every request
+```php
+    public function boot(): void
+    {
+        Auth::viaRequest('sanctum', function ($request) {
+            $user = User::where('email', $request->email)->first();
+            if ($user && Hash::check($request->password, $user->password)) {
+                return $user;
+            }
+            return null;
+        });
+        // or
+        Auth::viaRequest('sanctum', function ($request) {
+            $token = $request->bearerToken();
+            if ($token) {
+                return PersonalAccessToken::findToken($token)->tokenable;
+            }
+        });
+        Auth::viaRequest('session', function ($request) {
+            return User::first(); // that is meaningless only for test
+        });
+    }
+```
+## creating a custom user provider
+- there are two drivers for providers(eloquent and database)
+- driver define which model or table it will authenticate against
+```php
+    'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+    ],
+```
+### call auth against two different guards
+```php
+Auth::guard('users')->user();
+Auth::guard('trainees')->user();
+
+// define routes
+Route::middleware('auth:trainees')->group(function () {
+// Trainee-only routes here
+});
+```
+## Authorization and Roles
+### Defining Authorization Rule
+- in boot of AuthServiceProvider
+```php
+class AuthServiceProvider extends ServiceProvider
+{
+    public function boot(): void
+    {
+        Gate::define('update-contact', function ($user, $contact) {
+            return $user->id == $contact->user_id;
+        });
+    }
+}
+```
+### using it
+- inside controller or request
+````php
+if (Gate::allows('update-contact', $contact)) {
+    // Update contact
+}
+// or
+if (Gate::denies('update-contact', $contact)) {
+    abort(403);
+}
+````
+### make action for users rather than that user
+```php
+// the first parameter is the user sent inside forUser
+Gate::define('destroy-advertisement', function ($user, $advertisement) {
+    return $user->id == $advertisement->user_id;
+});
+
+if (Gate::forUser(auth()->user())->denies('destroy-advertisement', $Advertisement)) {
+    abort(403, 'Unauthorized action.');
+}
+```
+
+## Resource gates
+1. i create policy using `php artisan make:policy PolicyName --model=ModelName`
+```php
+namespace App\Policies;
+
+namespace App\Policies;
+
+use App\Models\Advertisement;
+class AdvertisementPolicy
+{
+    public function view(Advertisement $advertisement)
+    {
+        return auth()->user()->id === $advertisement->user_id;
+    }
+
+    public function update(Advertisement $advertisement)
+    {
+        return auth()->user()->id === $advertisement->user_id;
+    }
+
+    public function delete($user, Advertisement $advertisement)
+    {
+        return auth()->user()->id === $advertisement->user_id;
+    }
+}
+```
+2. register policy in `app/Providers/AuthServiceProvider.php`
+```php
+    protected $policies = [
+        Advertisement::class => AdvertisementPolicy::class,
+    ];
+
+    public function boot(): void
+    {
+        $this->registerPolicies();
+
+        Gate::resource('advertisement', AdvertisementPolicy::class, ['delete' => 'delete']);
+    }
+```
+3. use policy inside controller
+```php
+if(Gate::denies('advertisement.delete', $Advertisement)){
+   return $this->respondWithErrors(__('Unauthorized action.'), 403);
+}
+```
