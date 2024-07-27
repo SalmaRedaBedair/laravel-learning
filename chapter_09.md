@@ -250,19 +250,23 @@ namespace App\Policies;
 use App\Models\Advertisement;
 class AdvertisementPolicy
 {
-    public function view(Advertisement $advertisement)
+    public function view($user, Advertisement $advertisement)
     {
-        return auth()->user()->id === $advertisement->user_id;
+        return $user->id === $advertisement->user_id;
     }
 
-    public function update(Advertisement $advertisement)
+    public function update($user, Advertisement $advertisement)
     {
-        return auth()->user()->id === $advertisement->user_id;
+        return $user->id === $advertisement->user_id;
     }
 
     public function delete($user, Advertisement $advertisement)
     {
-        return auth()->user()->id === $advertisement->user_id;
+        return $user->id === $advertisement->user_id;
+    }
+    public function create($user) 
+    {
+        return $user->canCreate();
     }
 }
 ```
@@ -341,3 +345,115 @@ $this->authorize('update-contact', $contact);
     }
   ```
   
+## Checking the User Instance
+- i can check authorization for specific user instance, like that:
+```php
+$user = User::find(1);
+if ($user->can('create-contact')) {
+    // Do something
+}
+```
+- authorization methods used with user instance:
+  - $user->can()
+  - $user→canAny(): pass array of permissions
+  - $user->cant()
+  - $user->cannot()
+
+## Blade checks
+```php
+<nav>
+    <a href="/">Home</a>
+    @can('edit-contact', $contact)
+        <a href="{{ route('contacts.edit', [$contact->id]) }}">Edit This Contact</a>
+    @endcan
+</nav>
+```
+## Intercepting Checks
+- we use that when we want to give super admin all permissions
+- in that case we make some thing like that, `$ability` will be that ability name passed during check
+in controller or middleware, `$user` auth user
+```php
+Gate::before(function ($user, $ability) {
+    if ($user->slug == 'super_admin') {
+        return true;
+    }
+});
+```
+## policies
+- generate policy => `php artisan make:policy ContactPolicy`
+- every policy must be registered in AuthServiceProvider in property `$policies`
+```php
+class AuthServiceProvider extends ServiceProvider
+{
+    protected $policies = [
+        Contact::class => ContactPolicy::class,
+    ];
+```
+- policy auto-discovering:
+  - laravel try to guess every policy belongs to which model, according to conventional naming
+  - if you follow conventional naming, you havent to define array `$policies`
+```php
+namespace App\Policies;
+
+namespace App\Policies;
+
+use App\Models\Advertisement;
+class AdvertisementPolicy
+{
+    public function view($user, Advertisement $advertisement)
+    {
+        return $user->id === $advertisement->user_id;
+    }
+
+    public function update($user, Advertisement $advertisement)
+    {
+        return $user->id === $advertisement->user_id;
+    }
+
+    public function delete($user, Advertisement $advertisement)
+    {
+        return $user->id === $advertisement->user_id;
+    }
+    public function create($user) 
+    {
+        return $user->canCreate();
+    }
+}
+```
+## checking policies
+- i use only the name of method like `update` not `contact.update`
+```php
+// Gate
+if (Gate::denies('update', $contact)) {
+abort(403);
+}
+
+// Gate if you don't have an explicit instance
+if (! Gate::check('create', Contact::class)) {
+abort(403);
+}
+
+// User
+if ($user->can('update', $contact)) {
+// Do stuff
+}
+
+// Blade
+@can('update', $contact)
+// Show stuff
+@endcan
+
+if (policy($contact)->update($user, $contact)) {
+// Do stuff
+}
+```
+## Overriding policies
+- give permission for super admin
+```php
+public function before($user, $ability)
+{
+    if ($user->isAdmin()) {
+        return true;
+    }
+}
+```

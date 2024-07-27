@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code_base_notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/code_base_notes.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,7 +376,7 @@
       <workItem from="1721789448611" duration="3738000" />
       <workItem from="1721883819651" duration="8386000" />
       <workItem from="1721986017380" duration="4134000" />
-      <workItem from="1722008588525" duration="5055000" />
+      <workItem from="1722008588525" duration="5431000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />
