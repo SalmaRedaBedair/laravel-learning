@@ -19,4 +19,21 @@ those are notes that i will apply to my code base while making it
 - use commands and stubs to create your own module and remove it
 - read from book while making stubs and commands and anything similar to can write more nice code
 - php artisan publish:stub
-- 
+### Custom response macros
+- make modification to your own response and modification provided content
+- use that to add all required headers to your code
+```php
+class AppServiceProvider
+{
+public function boot()
+{
+    Response::macro('myJson', function ($content) {
+        return response(json_encode($content))
+        ->withHeaders(['Content-Type' =>
+        'application/json']);
+    });
+}
+
+// during usage
+return response()->myJson(['name' => 'Sangeetha']);
+```

@@ -171,6 +171,23 @@ Route::get('/', function () {
            ->download('file.zip');
 });
 ```
+## Custom response macros
+- make modification to your own response and modification provided content
+```php
+class AppServiceProvider
+{
+public function boot()
+{
+    Response::macro('myJson', function ($content) {
+        return response(json_encode($content))
+        ->withHeaders(['Content-Type' =>
+        'application/json']);
+    });
+}
+
+// during usage
+return response()->myJson(['name' => 'Sangeetha']);
+```
 ## Laravel and Middleware
 ### An Introduction to Middleware
 ```text
