@@ -122,6 +122,55 @@ we can divide them into many categories
    - `cookie()`
    - flash and old are most usage when the user input is validated or prevented
 
+## The response object
+- any response returned from route definition will be parsed into response your user's browser can parse
+- i can add cookies or headers to response 
+```php
+Route::get('route', function () {
+    return new Illuminate\Http\Response('Hello!');
+});
+
+// Same, using global function:
+Route::get('route', function () {
+    return response('Hello!');
+});
+
+Route::get('route', function () {
+    return response('Error!', 400)
+        ->header('X-Header-Name', 'header-value')
+        ->cookie('cookie-name', 'cookie-value');
+    });
+```
+
+## Specialized Response Types
+- There are also a few special response types for views, downloads, files, and JSON
+### View responses
+```php
+Route::get('/', function (XmlGetterService $xml) {
+    $data = $xml->get();
+    return response()
+           ->view('xml-structure', $data)
+           ->header('Content-Type', 'text/xml');
+});
+```
+
+### Download responses
+- that file is stored in database or protected location
+### File responses
+- display the file
+```php
+public function invoice($id)
+{
+    return response()->file("./invoices/{$id}.pdf", ['header' =>
+    'value']);
+}
+```
+```php
+Route::get('/', function () {
+    return response()
+           ->download('file.zip');
+});
+```
 ## Laravel and Middleware
 ### An Introduction to Middleware
 ```text
