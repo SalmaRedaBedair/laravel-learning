@@ -88,6 +88,39 @@ $kernel->terminate($request, $response);
 - then boot functions of all service providers are called
 
 ## The Request Object
+- Illuminate\Http\Request is an extension of Symfony’s HttpFoundation\Request
+- in native php you use $_SERVER, $_GET, $_POST to get information about the current user's request 
+- those are very hard to understand and i have to write a lot of code 
+- to get instance of $request object i can user `app()` like that
+```php
+$request = app(Illuminate\Http\Request::class);
+$request = app('request');
+```
+### request methods
+```text
+we can divide them into many categories
+```
+1. **Basic user input**
+   - input submitted by user through form
+   - get user input and any related information 
+2. **User and request state**
+   - input not submitted by user
+   - `method()` returns HTTP method used (get, post, batch, ...)
+   - `path()` return bath without domain
+   - `url()` url with domain
+   - `is()` search if current url contains specific regex
+   - `ip()` return ip address
+   - `header()` returns array of headers
+   - `server()`
+   - `secure()` if uses HTTPs or not
+3. **Files**
+   - file, allFiles, hasFile
+4. **Persistence**
+   - interacting with session
+   - `flash()` save current request to session but disappear after passing to the next request
+   - `old()` returns values that was previously flashed
+   - `cookie()`
+   - flash and old are most usage when the user input is validated or prevented
 
 ## Laravel and Middleware
 ### An Introduction to Middleware

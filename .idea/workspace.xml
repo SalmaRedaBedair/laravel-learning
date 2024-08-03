@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-idea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -377,6 +378,8 @@
       <workItem from="1721883819651" duration="8386000" />
       <workItem from="1721986017380" duration="4134000" />
       <workItem from="1722008588525" duration="5431000" />
+      <workItem from="1722073101503" duration="2510000" />
+      <workItem from="1722583972076" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />
