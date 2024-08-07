@@ -282,3 +282,19 @@ Route::get('contacts', [ContactController::class, 'index'])-
         });
     }
 ```
+## Passing Parameters to Middleware
+- like passing user type to act differently according to every middleware
+```php
+Route::get('company', function () {
+    return view('company.admin');
+})->middleware('auth:owner');
+
+
+public function handle(Request $request, Closure $next, $role):Response
+{
+    if (auth()->check() && auth()->user()->hasRole($role)) {
+        return $next($request);
+    }
+    return redirect('login');
+}
+```
