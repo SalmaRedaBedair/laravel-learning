@@ -249,3 +249,36 @@ protected $middleware = [
     \App\Http\Middleware\BanDeleteMethod::class,
 ];
 ```
+#### Binding route middleware
+- use names you define using aliases
+```php
+Route::get('contacts', [ContactController::class, 'index'])-
+>middleware('ban-delete');
+```
+
+### Using middleware groups
+- there is by default to route middleware groups in laravel (web and api)
+- how routes in web.php know the middleware group it belongs to?
+  - middleware groups are bind to that route in `RouteServiceProvider.php`
+```php
+    public function boot(): void
+    {
+        RateLimiter::for('api', function (Request $request) {
+            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
+        });
+
+        if(config('global.should_use_api_key_middleware')) {
+            array_push($this->apiMiddlewares, 'apikey');
+        }
+        $this->routes(function () {
+            Route::middleware($this->apiMiddlewares)
+                ->namespace($this->apiClientNamespace)
+                ->prefix('client-api/v1')
+                ->group(base_path('routes/api-v1.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/web.php'));
+        });
+    }
+```
