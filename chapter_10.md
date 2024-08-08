@@ -298,3 +298,41 @@ public function handle(Request $request, Closure $next, $role):Response
     return redirect('login');
 }
 ```
+## Default Middleware
+### maintenance mode
+```text
+php artisan down --refresh=5 --retry=30 --secret="long-password"
+
+php artisan up
+```
+### Rate Limiting
+```php
+Route::middleware(['auth:api', 'throttle:api'])->group(function () {
+    Route::get('/profile', function () {
+        //
+    });
+});
+```
+- i can configure max number of attempts per requests in route service provider
+```php
+RateLimiter::for('api', function (Request $request) {
+    return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
+});
+```
+- never to forget to register that middleware in kernel
+```php
+'api' => [
+    \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
+],
+
+// never to forget to add middleware api to both api.php, dashboard.php, ...
+Route::middleware($this->apiMiddlewares)
+     ->prefix('dashboard-api/v1')
+     ->namespace($this->dashboardApiNamespace)
+     ->group(base_path('routes/dashboard-v1.php'));
+
+ Route::middleware($this->apiMiddlewares)
+     ->namespace($this->apiClientNamespace)
+     ->prefix('client-api/v1')
+     ->group(base_path('routes/api-v1.php'));
+```

@@ -37,3 +37,4 @@ public function boot()
 // during usage
 return response()->myJson(['name' => 'Sangeetha']);
 ```
+- never to forget throttle for rate limit of requests
