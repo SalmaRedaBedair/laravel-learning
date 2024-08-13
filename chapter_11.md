@@ -34,4 +34,14 @@ $userMailer->welcome($user);
 i will have to write all that code and create all those objects
 - **that is the power of `service container`, let's see how it solves that mess.**
 
+## The app() Global Helper
+- it is used to get object of container
+- we pass class name to app() function, and it will return object of that class
+```php
+$logger = app(Logger::class);
+
+// is equal to
+
+$logger = $app['App\Models\Logger'];
+```
 
