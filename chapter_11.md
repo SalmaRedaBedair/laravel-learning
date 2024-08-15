@@ -69,4 +69,36 @@ $this->app->bind(UserMailer::class, function ($app) {
     );
 });
 ```
+### Binding to Singletons, Aliases, and Instances
+- singleton creates only one object of specific class which will be used over all that app
+```php
+$this->app->singleton(Mailer::class, function($app) {
+    return new Mailer();
+});
+
+class Mailer
+{
+    public function __construct()
+    {
+        echo 'constructing mailer';
+    }
+    public function hello($name)
+    {
+        return 'Hello '.$name;
+    }
+}
+
+public function test()
+{
+    $object = app(Mailer::class);
+    echo $object->hello('Salma');
+    $object2 = app(Mailer::class);
+    echo $object2->hello('loma');
+}
+
+# the output here would be:
+// constructing mailer => that is printed only once because only one instance is created
+// Hello Salma
+// Hello loma
+```
 

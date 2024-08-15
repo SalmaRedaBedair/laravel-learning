@@ -15,9 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-//        $this->app->bind(Mailer::class, function ($app) {
-//            return new Mailer();
-//        });
+        $this->app->singleton(Mailer::class, function($app) {
+            return new Mailer();
+        });
 //
 //        $this->app->bind(Logger::class, function ($app) {
 //            return new Logger();
@@ -28,13 +28,13 @@ class AppServiceProvider extends ServiceProvider
 //        });
 
         // Bind UserMailer with its dependencies
-        $this->app->bind(UserMailer::class, function ($app) {
-            return new UserMailer(
-                $app->make(Mailer::class),
-                $app->make(Logger::class),
-                $app->make(Slack::class)
-            );
-        });
+//        $this->app->singleton(UserMailer::class, function ($app) {
+//            return new UserMailer(
+//                $app->make(Mailer::class, ['name' => 'Salma']),
+//                $app->make(Logger::class),
+//                $app->make(Slack::class)
+//            );
+//        });
 
         // You can remove the direct instantiation from the register method
 //         dd(new UserMailer(app(Mailer::class), app(Logger::class), app(Slack::class)));
