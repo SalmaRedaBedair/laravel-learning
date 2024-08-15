@@ -37,12 +37,13 @@ i will have to write all that code and create all those objects
 ## The app() Global Helper
 - it is used to get object of container
 - we pass class name to app() function, and it will return object of that class
+
 ```php
 $logger = app(Logger::class);
 
 // is equal to
 
-$logger = $app['App\Models\Logger'];
+$logger = $app['App\test\Logger'];
 ```
 ## How the Container Is Wired
 ## Binding Classes to the Container
@@ -62,9 +63,9 @@ public function register(): void
 ```php
 $this->app->bind(UserMailer::class, function ($app) {
     return new UserMailer(
-        $app->make(Mailer::class), // it was already bind
-        $app->make(Logger::class), // it was already bind
-        $app->make(Slack::class) // it was already bind
+        $app->make(Mailer::class), // they don't have any dependency injection so i haven't to make any binds
+        $app->make(Logger::class), 
+        $app->make(Slack::class) 
     );
 });
 ```
