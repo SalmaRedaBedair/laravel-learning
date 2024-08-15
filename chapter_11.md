@@ -44,4 +44,28 @@ $logger = app(Logger::class);
 
 $logger = $app['App\Models\Logger'];
 ```
+## How the Container Is Wired
+## Binding Classes to the Container
+- here i tell the container if developer ask for an object of that class run that code
+### Binding to a Closure
+```php
+// In any service provider (maybe LoggerServiceProvider)
+public function register(): void
+{
+    $this->app->bind(Logger::class, function ($app) {
+        return new Logger('\log\path\here', 'error');
+    });
+}
+
+// that mean if user ask for Logger object, it will run that code in closure function
+```
+```php
+$this->app->bind(UserMailer::class, function ($app) {
+    return new UserMailer(
+        $app->make(Mailer::class), // it was already bind
+        $app->make(Logger::class), // it was already bind
+        $app->make(Slack::class) // it was already bind
+    );
+});
+```
 
