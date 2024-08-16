@@ -123,4 +123,11 @@ public function register(): void
         ->needs(Interfaces\Logger::class)
         ->give(Loggers\PaperTrail::class);
 }
+
+// another example
+$this->app->when(UserMailer::class)
+    ->needs(Logger::class)
+    ->give(function ($app) {
+        return $app->make(Logger::class, ['name' => 'loma']);
+    });
 ```
