@@ -158,3 +158,64 @@ class Foo
 // Calls the 'bar' method on 'Foo' with a first parameter of 'value'
 app()->call('Foo@bar', ['parameter1' => 'value']);
 ```
+## Facades and the Container
+### There are two trademark features of facades
+1. they’re all available in the global namespace (\Log is an alias to \Illuminate\Support\Facades\Log)
+2. they use static methods to access nonstatic resources
+- facades are simply instance of objects need dependency injection
+```php
+Log::alert('Something has gone wrong!');
+
+// the same as
+
+$logger = app('log'); // binding as alias
+$logger->alert('Something has gone wrong!');
+```
+### How Facades Work
+- every facade has it's `getFacadeAccessor` method
+- that get facade accessor return instance that stored in container with the given alias
+```php
+class Cache extends Facade
+{
+    protected static function getFacadeAccessor()
+    {
+        return 'cache';
+    }
+}
+```
+### How to create my own facade
+- make a class that extends Facade 
+- write get FacadeAccessor method that returns object stored in container
+- add facade name to aliases array in `config/app.php`
+```php
+class Mail extends Facade
+{
+    protected static function getFacadeAccessor()
+    {
+        return 'mailer';
+    }
+}
+
+// in config/app.php
+'aliases' => [
+    'mail' => Mail::class,
+],
+
+// in AppServiceProvider.php
+$app->bind('mailer', function ($app) {
+    return new Mailer();
+});
+```
+### Real-Time Facades
+- use `Facades\` before class name to use it as an instance
+```php
+public function test()
+{
+    dd(\Facades\App\test\UserMailer::hello());
+}
+```
+## Service Providers
+- if i want to add any thing to container i use `AppServiceProvider` 
+- it is better to create your own service provider for functionality you are developing
+- ex: make RoutesServiceProvider => for route configuration
+- ex: make RepositoryServiceProvider => for repository configuration, binding concrete to contract/ interface

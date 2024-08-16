@@ -13,7 +13,6 @@ class TestController extends Controller
 //        echo $object->hello('Salma');
 //        $object2 = app(Mailer::class);
 //        echo $object2->hello('loma');
-        $object = app(UserMailer::class);
-        dd($object);
+        dd(\Facades\App\test\UserMailer::hello());
     }
 }

@@ -13,4 +13,8 @@ class UserMailer
         $this->logger = $logger;
         $this->slack = $slack;
     }
+    public function hello()
+    {
+        return 'Hello';
+    }
 }
