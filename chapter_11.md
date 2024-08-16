@@ -101,4 +101,18 @@ public function test()
 // Hello Salma
 // Hello loma
 ```
+### Binding a Concrete Instance to an Interface
+```php
+public function register(): void
+{
+    $this->app->bind(\Interfaces\Mailer::class, function () {
+        return new MailgunMailer(...);
+    });
+}
+```
+- that achieve inversion of control
+- i can typehint Mailer across the code, and if i want to change from Mailgun to Mandrill,
+i can just change it in service provider once and all the code will work with no changes
+
+### Contextual Binding
 

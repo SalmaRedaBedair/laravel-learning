@@ -15,9 +15,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(Mailer::class, function($app) {
-            return new Mailer();
+        $this->app->bind(Mailer::class, function () {
+            return new Logger('loma');
         });
+//        $this->app->singleton(Mailer::class, function($app) {
+//            return new Mailer();
+//        });
+
 //
 //        $this->app->bind(Logger::class, function ($app) {
 //            return new Logger();
