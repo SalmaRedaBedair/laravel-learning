@@ -115,4 +115,12 @@ public function register(): void
 i can just change it in service provider once and all the code will work with no changes
 
 ### Contextual Binding
-
+- if having conditions
+```php
+public function register(): void
+{
+    $this->app->when(Jobs\SendWelcomeEmail::class)
+        ->needs(Interfaces\Logger::class)
+        ->give(Loggers\PaperTrail::class);
+}
+```
