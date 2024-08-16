@@ -131,3 +131,30 @@ $this->app->when(UserMailer::class)
         return $app->make(Logger::class, ['name' => 'loma']);
     });
 ```
+## Constructor Injection in Laravel Framework Files
+## Method Injection
+```php
+class Mailer
+{
+    public function __construct()
+    {
+        echo 'constructing mailer';
+    }
+    public function hello($name)
+    {
+        return 'Hello '.$name;
+    }
+}
+
+// if there is method need parameters i will pass it like this
+$app->make(Logger::class, ['name' => 'loma']);
+
+
+class Foo
+{
+    public function bar($parameter1) {}
+}
+
+// Calls the 'bar' method on 'Foo' with a first parameter of 'value'
+app()->call('Foo@bar', ['parameter1' => 'value']);
+```
