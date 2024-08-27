@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
-      <change afterPath="$PROJECT_DIR$/sanctum.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/blade.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter_13.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -393,6 +391,9 @@
       <workItem from="1723659928441" duration="45000" />
       <workItem from="1723789806010" duration="5597000" />
       <workItem from="1723810770736" duration="1513000" />
+      <workItem from="1723837744718" duration="131000" />
+      <workItem from="1723871074933" duration="615000" />
+      <workItem from="1724786062979" duration="1521000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />
