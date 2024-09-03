@@ -85,3 +85,30 @@ Route::get('dogs', function (Request $request) {
 "total": 4
 }
 ````
+## Sorting and Filtering
+### Storing
+- i can make only one code to sort in both directions let's see that code:
+- i add - before the column name if want to sort descending
+```php
+// Handles ?sort=name,-weight
+Route::get('dogs', function (Request $request) {
+// Grab the query parameter and turn it into an array exploded by
+,
+$sorts = explode(',', $request->input('sort', ''));
+// Create a query
+$query = Dog::query();
+// Add the sorts one by one
+foreach ($sorts as $sortColumn) {
+$sortDirection = str_starts_with($sortColumn, '-') ? 'desc' :
+'asc';
+$sortColumn = ltrim($sortColumn, '-');
+$query->orderBy($sortColumn, $sortDirection);
+}
+// Return
+return $query->paginate(20);
+});
+```
+- input like that:
+```text
+http://myapp.com/api/dogs?sort=name,-weight,age,-height
+```
