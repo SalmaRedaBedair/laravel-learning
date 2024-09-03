@@ -112,3 +112,18 @@ return $query->paginate(20);
 ```text
 http://myapp.com/api/dogs?sort=name,-weight,age,-height
 ```
+### Filtering Your API Results
+```php
+Route::get('dogs', function (Request $request) {
+    $query = Dog::query();
+    $query->when(request()->filled('filter'), function ($query) {
+        $filters = explode(',', request('filter'));
+        foreach ($filters as $filter) {
+            [$criteria, $value] = explode(':', $filter);
+            $query->where($criteria, $value);
+        }
+        return $query;
+    });
+    return $query->paginate(20);
+});
+```
