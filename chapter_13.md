@@ -127,3 +127,43 @@ Route::get('dogs', function (Request $request) {
     return $query->paginate(20);
 });
 ```
+## Transforming Results
+## API Resources
+- resource used to structure response as i want
+- calculate data 
+- embed other resources
+### Creating a Resource Class
+```text
+php artisan make:resource Dog
+```
+### Resource Collections
+- when want to return more than one entity in response  
+```php
+DogResource::collection(Dog::all());
+```
+- *but what is i want to return other data with that collection?*
+   - in that case i have to create another resource `DogCollection`
+  ```php
+  namespace App\Http\Resources;
+  use Illuminate\Http\Resources\Json\ResourceCollection;
+  class DogCollection extends ResourceCollection
+  {
+        /**
+        * Transform the resource collection into an array.
+        *
+        * @return array<int|string, mixed>
+        */
+        public function toArray(Request $request): array
+        {
+            return [
+                    'data' => $this->collection,
+                    'links' => [
+                        'self' => route('dogs.index'), 
+                        // i may also add pdf link for financial report here  
+                    ],
+                 ];
+
+        }
+    }
+  ```
+  

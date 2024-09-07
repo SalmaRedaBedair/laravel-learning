@@ -433,7 +433,7 @@ if (! Gate::check('create', Contact::class)) {
 abort(403);
 }
 
-// User
+// UserResource
 if ($user->can('update', $contact)) {
 // Do stuff
 }

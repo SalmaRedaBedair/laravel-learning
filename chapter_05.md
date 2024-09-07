@@ -977,7 +977,7 @@ public function contacts()
 ```
 ### customize pivot key to have different name
 ```php
-// User model
+// UserResource model
 public function groups()
 {
     return $this->belongsToMany(Group::class)
@@ -987,7 +987,7 @@ public function groups()
 // Using this relationship:
 User::first()->groups->each(function ($group) {
     echo sprintf(
-        'User joined this group at: %s',
+        'UserResource joined this group at: %s',
         $group->membership->created_at // access pivot using the new name
     );
 });

@@ -299,7 +299,7 @@ Artisan::command(
     'password:reset {userId} {--sendEmail}',
     function ($userId, $sendEmail) {
         $userId = $this->argument('userId');
-        $this->info('User id: ' . $userId);
+        $this->info('UserResource id: ' . $userId);
     }
 );
 ```
