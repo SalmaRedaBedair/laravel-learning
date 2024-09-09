@@ -166,4 +166,54 @@ DogResource::collection(Dog::all());
         }
     }
   ```
-  
+### Nesting Relationships
+- add key with the relation and return it as resource
+```php
+public function toArray(Request $request): array
+{
+    return [
+        'name' => $this->name,
+        'breed' => $this->breed,
+        'friends' => Dog::collection($this->friends),
+    ];
+}
+```
+- *note that:*
+  - the above example may give an error 
+  - so i should eager load the relation when calling the resource
+  - i can do that by using `with` method
+  - ```php
+    return new DogResource(Dog::with('friends')->find($dogId));
+    ```
+    
+### i can check if the relation is loaded then return it
+```php
+public function toArray(Request $request): array
+{
+    return [
+        'name' => $this->name,
+        'breed' => $this->breed,
+        // Only load this relationship if it's been eager loaded
+        'bones' => BoneResource::collection($this
+            ->whenLoaded('bones')),
+        // Or only load this relationship if the URL asks for it
+        'bones' => $this->when(
+        $request->get('include') == 'bones',
+            BoneResource::collection($this->bones)
+        ),
+    ];
+}
+```
+### Conditionally Applying Attributes
+- return some attributes based on condition
+```php
+public function toArray(Request $request): array
+{
+    return [
+        'name' => $this->name,
+        'breed' => $this->breed,
+        'rating' => $this->when(Auth::user()->canSeeRatings(), 12),
+    ];
+}
+```
+### More Customizations for API Resources
