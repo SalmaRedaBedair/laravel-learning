@@ -217,3 +217,72 @@ public function toArray(Request $request): array
 }
 ```
 ### More Customizations for API Resources
+## API Authentication
+- using sanctum and passport
+### API Authentication with Sanctum
+- using token, generate token when login
+- SPA: use cookies
+
+### Installing Sanctum
+```text
+composer require laravel/sanctum
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+php artisan migrate
+```
+```php
+Route::get('clips', function () {
+  return view('clips.index', ['clips' => Clip::all()]);
+})->middleware('auth:sanctum');
+```
+
+### Issuing Sanctum tokens manually
+1. set up your model 
+```php
+use Laravel\Sanctum\HasApiTokens;
+class User extends Authenticatable
+{
+    use HasApiTokens, HasFactory, Notifiable;
+}
+```
+### generate token
+```php
+Route::post('tokens/create', function () {
+    $token = auth()->user()->createToken(request()->token_name);
+    return view('tokens.created', ['token' => $token->plainTextToken]);
+});
+
+Route::get('tokens', function () {
+    return view('tokens.index', ['tokens' => auth()->user()->tokens]);
+});
+```
+### abilities
+```php
+$token = $user->createToken(
+    request()->token_name, ['list-clips', 'add-delete-clips']
+);
+```
+- to use that abilities, add those to kernel 
+```php
+'abilities' => \Laravel\Sanctum\Http\Middleware\CheckAbilities::class,
+'ability' => \Laravel\Sanctum\Http\Middleware\CheckForAnyAbility::class,
+```
+#### Manually checking a user’s access based on token abilities
+```php
+if (request()->user()->tokenCan('list-clips')) {
+// ...
+}
+```
+#### Using middleware to restrict access based on token scopes
+```php
+// routes/api.php
+Route::get('clips', function () {
+// Access token has both the "list-clips" and "add-delete-clips" abilities
+})->middleware(['auth:sanctum','abilities:list-clips,add-delete-clips']);
+// or
+
+Route::get('clips', function () {
+// Access token has at least one of the listed abilities
+})->middleware(['auth:sanctum','ability:list-clips,add-delete-clips'])
+```
+

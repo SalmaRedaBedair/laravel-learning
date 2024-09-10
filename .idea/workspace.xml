@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter_13.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_13.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/practice/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/practice/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,6 +216,10 @@
       <path value="$PROJECT_DIR$/practice/vendor/_laravel_idea" />
       <path value="$PROJECT_DIR$/practice/vendor/inertiajs/inertia-laravel" />
       <path value="$PROJECT_DIR$/practice/vendor/tightenco/ziggy" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/practice/vendor/laravel/prompts" />
+      <path value="$PROJECT_DIR$/practice/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/practice/vendor/carbonphp/carbon-doctrine-types" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
