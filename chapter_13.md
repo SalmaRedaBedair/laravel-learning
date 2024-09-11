@@ -284,5 +284,7 @@ Route::get('clips', function () {
 Route::get('clips', function () {
 // Access token has at least one of the listed abilities
 })->middleware(['auth:sanctum','ability:list-clips,add-delete-clips'])
+
+// TODO: make some examples on abilities to understand more
 ```
 

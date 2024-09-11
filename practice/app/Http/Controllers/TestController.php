@@ -12,6 +12,12 @@ class TestController extends Controller
     public function test()
     {
         $user = User::first();
-        return new UserResource($user);
+        $user->token = $user->createToken('sanctum', ['list-clips', 'add-delete-clips'])->plainTextToken;
+        return ['user' => new UserResource($user)];
+    }
+
+    public function testAbility()
+    {
+       dd(auth()->user()->can('list-clips'));
     }
 }
