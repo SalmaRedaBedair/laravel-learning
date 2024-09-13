@@ -18,6 +18,6 @@ class TestController extends Controller
 
     public function testAbility()
     {
-       dd(auth()->user()->can('list-clips'));
+       return 'test ability';
     }
 }

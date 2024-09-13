@@ -10,4 +10,4 @@ Route::get('/', function () {
 Route::get('test', [TestController::class, 'test']);
 
 Route::get('test-ability', [TestController::class, 'testAbility'])
-->middleware(['auth:sanctum', 'ability:list-clips']);
+    ->middleware(['auth:sanctum', 'ability:list-clips2']);

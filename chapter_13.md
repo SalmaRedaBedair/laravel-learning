@@ -284,7 +284,15 @@ Route::get('clips', function () {
 Route::get('clips', function () {
 // Access token has at least one of the listed abilities
 })->middleware(['auth:sanctum','ability:list-clips,add-delete-clips'])
-
-// TODO: make some examples on abilities to understand more
 ```
+1. add abilities to every generated token 
+```php
+$user->token = $user->createToken('sanctum', ['list-clips', 'add-delete-clips'])->plainTextToken;
+```
+2. check for every end point if auth have ability to show that endpoint
+````php
+Route::get('test-ability', [TestController::class, 'testAbility'])
+    ->middleware(['auth:sanctum', 'ability:list-clips2'])
+````
+*spatie roles and permissions handle that in more simple way*
 
