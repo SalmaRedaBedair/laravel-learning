@@ -7,8 +7,6 @@
     <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter_13.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_13.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/app/Http/Controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -413,7 +411,7 @@
       <workItem from="1725910250864" duration="3052000" />
       <workItem from="1726078205937" duration="1876000" />
       <workItem from="1726215834529" duration="409000" />
-      <workItem from="1726216268086" duration="388000" />
+      <workItem from="1726216268086" duration="1756000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />

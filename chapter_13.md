@@ -295,4 +295,38 @@ Route::get('test-ability', [TestController::class, 'testAbility'])
     ->middleware(['auth:sanctum', 'ability:list-clips2'])
 ````
 *spatie roles and permissions handle that in more simple way*
+## SPA authentication
+- un comment that middleware
+```php
+'api' => [
+\Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+    // Other API middleware here
+],
+```
+- update config/sanctum.php
+```php
+axios.get('/sanctum/csrf-cookie').then(response => {
+    // Handle login
+});
+```
+- now you will be authenticated using cookies
+
+## Mobile app authentication
+```php
+Route::post('sanctum/token', function (Request $request) {
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+        'device_name' => 'required',
+    ]);
+    $user = User::where('email', $request->email)->first();
+    if (! $user || ! Hash::check($request->password, $user->password)) {
+        throw ValidationException::withMessages([
+            'email' => ['The provided credentials are incorrect.'],
+        ]);
+    }
+    return $user->createToken($request->device_name)->plainTextToken;
+});
+```
+
 
