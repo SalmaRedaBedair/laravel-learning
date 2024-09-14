@@ -328,5 +328,15 @@ Route::post('sanctum/token', function (Request $request) {
     return $user->createToken($request->device_name)->plainTextToken;
 });
 ```
+## API Authentication with Laravel Passport
+```text
+set up full-featured OAuth2 server in your application
+```
+### A brief introduction to OAuth 2.0
+- most common auth system used in RESTful API
+- it allow us to connect to another service which need auth without auth again
+- useful links for more explanation
+  - [المدرسة](https://youtu.be/86qNjL7I00w?si=6c_EyMgLlYwceEvT)
+### Installing Passport
 
 
