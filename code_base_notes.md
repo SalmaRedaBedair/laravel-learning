@@ -56,3 +56,6 @@ Route::post('sanctum/token', function (Request $request) {
     return $user->createToken($request->device_name)->plainTextToken;
 });
 ```
+- $modelResource call object not defined in trait but defined in controller that trait used in 
+- device token => test
+- activity log for all different actions

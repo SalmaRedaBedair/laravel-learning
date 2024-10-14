@@ -338,5 +338,7 @@ set up full-featured OAuth2 server in your application
 - useful links for more explanation
   - [المدرسة](https://youtu.be/86qNjL7I00w?si=6c_EyMgLlYwceEvT)
 ### Installing Passport
+- follow laravel passport documentation to install it
+- 
 
 
