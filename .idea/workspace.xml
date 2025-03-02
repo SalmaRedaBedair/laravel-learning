@@ -5,8 +5,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
+      <change afterPath="$PROJECT_DIR$/laravel-tips.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_13.md" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_13.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/TestController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Http/Resources/UserResource.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Models/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/Providers/AppServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/test/Logger.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/test/Mailer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/test/Slack.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/app/test/UserMailer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/artisan" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/bootstrap/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/bootstrap/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/bootstrap/providers.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/filesystems.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/logging.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/mail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/queue.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/sanctum.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/services.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/config/session.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/database/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/database/factories/UserFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/database/migrations/0001_01_01_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/database/migrations/0001_01_01_000001_create_cache_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/database/migrations/0001_01_01_000002_create_jobs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/database/migrations/2024_09_10_201711_create_personal_access_tokens_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/database/seeders/DatabaseSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/public/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/resources/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/resources/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/routes/api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/routes/console.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/routes/web.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/storage/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/storage/app/public/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/storage/framework/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/storage/framework/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/storage/framework/cache/data/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/storage/framework/sessions/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/storage/framework/testing/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/storage/framework/views/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/storage/logs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/tests/TestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/tests/Unit/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/vite.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +116,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files\php-8.2.1\php.exe">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe">
     <include_path>
       <path value="$PROJECT_DIR$/practice/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/practice/vendor/spatie/backtrace" />
@@ -232,8 +296,10 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.laravel-idea.update-module-directories&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/laravel/practice/routes&quot;,
@@ -267,17 +333,11 @@
       <option name="pestRunnerSettings">
         <PestRunner configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
       </option>
-      <option name="runnerSettings">
-        <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
-      </option>
       <method v="2" />
     </configuration>
     <configuration name="Main" type="PestRunConfigurationType">
       <option name="pestRunnerSettings">
         <PestRunner configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
-      </option>
-      <option name="runnerSettings">
-        <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/practice/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
       </option>
       <method v="2" />
     </configuration>
@@ -285,7 +345,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14475.35" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PS-243.23654.168" />
+        <option value="bundled-php-predefined-a98d8de5180a-4c3855d0ab16-com.jetbrains.php.sharedIndexes-PS-243.23654.168" />
       </set>
     </attachedChunks>
   </component>
@@ -417,6 +478,11 @@
       <workItem from="1726894667213" duration="1327000" />
       <workItem from="1727205257015" duration="228000" />
       <workItem from="1727900886320" duration="22000" />
+      <workItem from="1740480578138" duration="7726000" />
+      <workItem from="1740553315674" duration="4012000" />
+      <workItem from="1740642318020" duration="1960000" />
+      <workItem from="1740645653997" duration="2150000" />
+      <workItem from="1740897499596" duration="3289000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />
