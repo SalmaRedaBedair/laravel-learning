@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="some tips" />
+    <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="some tips">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-tips.md" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-tips.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -415,7 +418,7 @@
       <workItem from="1740553315674" duration="4012000" />
       <workItem from="1740642318020" duration="1960000" />
       <workItem from="1740645653997" duration="2150000" />
-      <workItem from="1740897499596" duration="4334000" />
+      <workItem from="1740897499596" duration="8830000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />
@@ -449,7 +452,15 @@
       <option name="project" value="LOCAL؜" />
       <updated>1740902533869</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL؜-٠٠٠٠٥" summary="some tips">
+      <option name="closed" value="true" />
+      <created>1740903005236</created>
+      <option name="number" value="٠٠٠٠٥" />
+      <option name="presentableId" value="LOCAL؜-٠٠٠٠٥" />
+      <option name="project" value="LOCAL؜" />
+      <updated>1740903005236</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -222,13 +222,135 @@ public function publishedLessons(): HasMany
      return $this->lessons()->published();
 }
 ```
+### Eloquent where date methods
+```php
+$products = Product::whereDate('created_at', '2018-01-31')->get();
+$products = Product::whereMonth('created_at', '12')->get();
+$products = Product::whereDay('created_at', '31')->get();
+$products = Product::whereYear('created_at', date('Y'))->get();
+$products = Product::whereTime('created_at', '=', '14:13:58')->get();
+```
+### Fill a column automatically while you persist data to the database
+- better to be used in case of creating something which have relation with changeable object
+- like, if order is paid, we have to product money in pivot table
+```php
+// create only
+class Country extends Model {
+    protected static function boot()
+    {
+        parent::boot();
 
+        Country::creating(function($model) {
+            $model->position = Country::max('position') + 1;
+        });
+    }
+}
 
+// update or create
+class Article extends Model
+{
+    ...
+    protected static function boot()
+    {
+        parent:boot();
 
+        static::saving(function ($model) {
+            $model->slug = Str::slug($model->title);
+        });
+    }
+}
+```
+### Grouping by First Letter
+- you can make using specific condition
+```php
+$users = User::all()->groupBy(function($item) {
+    return $item->name[0];
+});
+```
 
+### Never Update the Column
+- if you have DB column which you want to store only once and never to update it again
+```php
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
+class User extends Model
+{
+    protected function email(): Attribute
+    {
+        return Attribute::make(
+            set: fn ($value, $attributes) => $attributes['email'] ?? $value,
+        );
+    }
+}
+```
+### Find Many
+```php
+// Will return Eloquent Model
+$user = User::find(1);
+// Will return Eloquent Collection
+$users = User::find([1,2,3]);
 
+return Product::whereIn('id', $this->productIDs)->get();
+// You can do this
+return Product::find($this->productIDs)
+```
 
+### DB::transaction
+- use it instead of using DB::beginTransaction(), DB::commit() and DB::rollBack()
+```php
+DB::transaction(function () {
+    DB::table('users')->update(['votes' => 1]);
+
+    DB::table('posts')->delete();
+});
+```
+### Forget Cache on Save
+- delete cache if update or create
+- like which was using inside laravel settings
+```php
+class Post extends Model
+{
+    // Forget cache key on storing or updating
+    public static function boot()
+    {
+        parent::boot();
+        static::saved(function () {
+           Cache::forget('posts');
+        });
+    }
+}
+```
+### Order by Pivot Fields
+```php
+class Tag extends Model
+{
+    public $table = 'tags';
+}
+
+class Post extends Model
+{
+    public $table = 'posts';
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'post_tag', 'post_id', 'tag_id')
+            ->using(PostTagPivot::class)
+            ->withTimestamps()
+            ->withPivot('flag');
+    }
+}
+
+class PostTagPivot extends Pivot
+{
+    protected $table = 'post_tag';
+}
+
+// Somewhere in the Controller
+public function getPostTags($id)
+{
+    return Post::findOrFail($id)->tags()->orderByPivot('flag', 'desc')->get();
+}
+```
 
 
 
