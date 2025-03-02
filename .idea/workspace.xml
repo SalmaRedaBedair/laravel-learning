@@ -4,74 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="validation">
-      <change afterPath="$PROJECT_DIR$/laravel-tips.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Controllers/TestController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Http/Resources/UserResource.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Models/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/Providers/AppServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/test/Logger.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/test/Mailer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/test/Slack.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/app/test/UserMailer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/artisan" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/bootstrap/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/bootstrap/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/bootstrap/providers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/cache.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/filesystems.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/logging.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/mail.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/queue.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/sanctum.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/services.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/config/session.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/database/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/database/factories/UserFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/database/migrations/0001_01_01_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/database/migrations/0001_01_01_000001_create_cache_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/database/migrations/0001_01_01_000002_create_jobs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/database/migrations/2024_09_10_201711_create_personal_access_tokens_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/database/seeders/DatabaseSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/public/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/resources/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/resources/views/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/routes/api.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/routes/console.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/routes/web.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/storage/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/storage/app/public/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/storage/framework/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/storage/framework/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/storage/framework/cache/data/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/storage/framework/sessions/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/storage/framework/testing/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/storage/framework/views/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/storage/logs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/tests/TestCase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/tests/Unit/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/vite.config.js" beforeDir="false" />
-    </list>
+    <list default="true" id="dc38ffde-903a-4a1d-bc7c-3d323d77203c" name="Changes" comment="some tips" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -482,7 +415,7 @@
       <workItem from="1740553315674" duration="4012000" />
       <workItem from="1740642318020" duration="1960000" />
       <workItem from="1740645653997" duration="2150000" />
-      <workItem from="1740897499596" duration="3289000" />
+      <workItem from="1740897499596" duration="4026000" />
     </task>
     <task id="LOCAL-00001" summary="validation">
       <option name="closed" value="true" />
@@ -500,7 +433,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721673088938</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL؜-٠٠٠٠٣" summary="some tips">
+      <option name="closed" value="true" />
+      <created>1740902510417</created>
+      <option name="number" value="٠٠٠٠٣" />
+      <option name="presentableId" value="LOCAL؜-٠٠٠٠٣" />
+      <option name="project" value="LOCAL؜" />
+      <updated>1740902510417</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,6 +460,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="validation" />
+    <MESSAGE value="some tips" />
+    <option name="LAST_COMMIT_MESSAGE" value="some tips" />
   </component>
 </project>
