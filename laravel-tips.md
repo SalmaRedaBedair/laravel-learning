@@ -351,7 +351,19 @@ public function getPostTags($id)
     return Post::findOrFail($id)->tags()->orderByPivot('flag', 'desc')->get();
 }
 ```
-
+### Get original attributes after mutating an Eloquent record
+```php
+$user = App\User::first();
+$user->name; // John
+$user->name = "Peter"; // Peter
+$user->getOriginal('name'); // John
+$user->getOriginal(); // Original $user record
+```
+### Updating the model without dispatching events
+```php
+$flight->updateQuietly(['departed' => false]);
+```
+### stop at prune model
 
 
 
